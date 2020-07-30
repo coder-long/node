@@ -139,27 +139,57 @@ app.post('/api/login', (req, res) => {
 app.get('/api/search', (req, res) => {
 
     let char_type = req.query.char_type //传的参数
+    let big_price = req.query.big_price //条件查询 价格
+    let li_price = req.query.li_price
 
-    Vehicle.find({ char_type: char_type }, (err, vehicle) => {
+    console.log(char_type);
 
-        if (err) {
-            res.json({
-                code: 1,
-                msg: '无结果'
+    if(char_type!=''){
+
+        Vehicle.find({ char_type: char_type }, (err, vehicle) => {
+            if (err) {
+                res.json({
+                    code: 1,
+                    msg: '无结果'
+                })
+    
+                return
+            }
+            res.send({
+                code: 0,
+                msg: '搜寻成功',
+                data: vehicle
+            })
+        })
+    }
+
+    if(big_price!='' || li_price){
+
+        Vehicle
+        .find({})
+        .where("now_price")
+        .gt(li_price)
+        .lt(big_price)
+        .limit(5)
+        .then((data)=>{
+
+            console.log(data);
+            res.send({
+                code: 0,
+                msg: '搜寻成功',
+                data: data
             })
 
-            return
-        }
-
-        res.send({
-            code: 0,
-            msg: '搜寻成功',
-            data: vehicle
         })
 
-    })
+    }
+
+
+
 })
 
+
+ 
 
 
 // Vehicle.find({}).then(res => console.log(res))
@@ -251,7 +281,7 @@ app.post('/api/modify', (req, res) => {
 
 
 
-Vehicle.find({char_type:'本田22222'}).then(res=>console.log(res))
+// Vehicle.find({char_type:'本田22222'}).then(res=>console.log(res))
 
 
 
