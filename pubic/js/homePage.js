@@ -20,6 +20,7 @@ $('.pop-close').on('click', function() {
 /* -----------注冊界面--------------------------- */
 let url = '/api/res'
 $('.zhuce-btn').on('click', function() {
+
     let username = $('.username').val()
     let pwd = $('.pwd').val()
     if (username == '' || pwd == '') {
@@ -35,7 +36,9 @@ $('.zhuce-btn').on('click', function() {
             },
             success(data) {
                 console.log(data);
-                if (data.code == 0) {
+                if (data.code == 1) {
+                    alert("用户已存在，请重新注册！")
+                } else if (data.code == 0) {
                     alert('注册成功！ 快去登录吧！');
                     $('.zhuce-box').hide();
                     $('.pop-box').show();
@@ -49,7 +52,11 @@ $('.zhuce-btn').on('click', function() {
 /* ------------------登录界面-------------------------- */
 $('.sub-btn').on('click', function() {
     let username = $('.dengluusername').val()
+<<<<<<< HEAD
+    let pwd = $('.denglupwd').val()
+=======
     let pwd = $('.zhucepwd').val()
+>>>>>>> de05c0d2f93984db1f391a3b7fd47535c875d307
     if (username == '' && pwd == '') {
         alert('请输入用户名或密码')
         return
@@ -73,7 +80,11 @@ $('.sub-btn').on('click', function() {
                     $('.uc-my').on('click', function() {
                         alert('个人用户中心还在开发中，哭兮兮。。。。')
                         $('.dengluusername').val('');
+<<<<<<< HEAD
+                        $('.denglupwd').val('');
+=======
                         $('.zhucepwd').val('');
+>>>>>>> de05c0d2f93984db1f391a3b7fd47535c875d307
                         $('.pop-box').hide();
                     })
                 }
