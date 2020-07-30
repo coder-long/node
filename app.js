@@ -9,7 +9,7 @@ const { Vehicle, Aa, Bb, Cc } = require('./module/vehicle')
 let db = require('./module/db')
 let app = express()
 
-app.use(session({ //
+/* app.use(session({ //
     secret:"gaongaoge",//生成唯一的令牌要加密 这个就是加密的密钥
     resave:false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
     rolling:true, //每次请求都重置 cookie的设置
@@ -19,7 +19,7 @@ app.use(session({ //
          sameSite:"lax", // 允许三方访问cookie否
          httpOnly:true //只能在http协议下 访问 cookie
     }
-}))
+})) */
 app.use(express.static(path.join(__dirname, 'pubic')))
 app.use(express.static(path.join(__dirname, 'uplodeImg')))
 app.use(cors())
@@ -28,34 +28,33 @@ app.use(bodyParser.urlencoded({ //处理前端表单post "a=1;b=2"
     extended: true
 }))
 
-app.use(function(req,res,next){
-    
-    if(req.url.indexOf("login") > -1 || req.url.indexOf("res") > -1 || req.url.indexOf("upload") > -1){
-        
+app.use(function(req, res, next) {
+
+    if (req.url.indexOf("login") > -1 || req.url.indexOf("res") > -1 || req.url.indexOf("upload") > -1) {
+
         next() //放行，执行后面的路由匹配
 
-    }else{
-           
-         if(req.session.username){
-             next()
-         }else{
-               
+    } else {
+
+        if (req.session.username) {
+            next()
+        } else {
+
             res.send({
-                code:2,
-                msg:"登录失效!"
+                code: 2,
+                msg: "登录失效!"
             })
 
-         }
+        }
     }
 })
 
-User.find({username:'helong'}).then(res=>console.log(res))
+User.find({ username: 'helong' }).then(res => console.log(res))
 
 
 
 //注册
-app.post('/api/res',(req,res)=>{
-
+app.post('/api/res', (req, res) => {
     User.find({ username: req.body.username }).then((data) => {
         // console.log(data);
         if (data != '') {
@@ -88,9 +87,6 @@ app.post('/api/res',(req,res)=>{
 
 
         }
-
-
-
     })
 
 })
@@ -176,17 +172,17 @@ app.post('/api/page', (req, res) => {
     let page = req.body.page
 
     Vehicle
-    .find({})
-    .skip(40 * page)
-    .limit(40)
-    .then((data) => {
-        res.send({
-            code: 0,
-            msg: '成功',
-            data: data
-        })
+        .find({})
+        .skip(40 * page)
+        .limit(40)
+        .then((data) => {
+            res.send({
+                code: 0,
+                msg: '成功',
+                data: data
+            })
 
-    })
+        })
 
 })
 
@@ -223,41 +219,41 @@ app.post('/api/del', (req, res) => {
 app.post('/api/modify', (req, res) => {
 
     let char_type = req.body.char_type //传入的类型
-    let new_char_type = req.new_char_type  // 传入的新的类型
+    let new_char_type = req.new_char_type // 传入的新的类型
 
-    let year = req.body.year   //传入的年份
-    let new_year = req.body.new_year  //传入的修改的年份
+    let year = req.body.year //传入的年份
+    let new_year = req.body.new_year //传入的修改的年份
 
-    let now_price = req.body.now_price   //传入的现价
-    let new_now_price = req.body.new_now_price  //传入的修改的年份
-    
+    let now_price = req.body.now_price //传入的现价
+    let new_now_price = req.body.new_now_price //传入的修改的年份
+
 
     Vehicle
-    .where({char_type:char_type,year:year,now_price:now_price})
-    .update({$set:{char_type:new_char_type,year:new_year,now_price:new_now_price}})
-    .then((data)=>{
-        res.json({
-            code:0,
-            msg:'修改成功！',
-            data:data
+        .where({ char_type: char_type, year: year, now_price: now_price })
+        .update({ $set: { char_type: new_char_type, year: new_year, now_price: new_now_price } })
+        .then((data) => {
+            res.json({
+                code: 0,
+                msg: '修改成功！',
+                data: data
+            })
         })
-    })
 
 })
 
 
 
 
-Vehicle.find({char_type:'本田22222'}).then(res=>console.log(res))
+Vehicle.find({ char_type: '本田22222' }).then(res => console.log(res))
 
 
 
 // 添加接口
-app.post('/api/add',(req,res)=>{
+app.post('/api/add', (req, res) => {
     let char_type = req.body.char_type //传入的类型
-    let year = req.body.year   //传入的年份
-    let now_price = req.body.now_price   //传入的现价
-    
+    let year = req.body.year //传入的年份
+    let now_price = req.body.now_price //传入的现价
+
 })
 
 
@@ -356,5 +352,3 @@ app.get('/api/jiangjia', (req, res) => {
 app.listen(8828, () => {
     console.log('服务已开启！');
 })
-
-
