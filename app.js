@@ -9,6 +9,7 @@ const { Vehicle, Aa, Bb, Cc } = require('./module/vehicle')
 let db = require('./module/db')
 let app = express()
 
+<<<<<<< HEAD
 /* app.use(session({ //
     secret:"gaongaoge",//生成唯一的令牌要加密 这个就是加密的密钥
     resave:false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
@@ -20,6 +21,22 @@ let app = express()
          httpOnly:true //只能在http协议下 访问 cookie
     }
 })) */
+=======
+// app.use(session({ //
+//     secret:"gaongaoge",//生成唯一的令牌要加密 这个就是加密的密钥
+//     resave:false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
+//     rolling:true, //每次请求都重置 cookie的设置
+//     cookie:{
+//          maxAge:10000*1000*3600,
+//          secure:false, // 如果为true ，这个cookie的设置只能是 https 
+//          sameSite:"lax", // 允许三方访问cookie否
+//          httpOnly:true //只能在http协议下 访问 cookie
+//     }
+// }))
+
+
+
+>>>>>>> 42ff8f150e10abf0d18a25aac3131b6f5e87ca4c
 app.use(express.static(path.join(__dirname, 'pubic')))
 app.use(express.static(path.join(__dirname, 'uplodeImg')))
 app.use(cors())
@@ -28,6 +45,7 @@ app.use(bodyParser.urlencoded({ //处理前端表单post "a=1;b=2"
     extended: true
 }))
 
+<<<<<<< HEAD
 app.use(function(req, res, next) {
 
     if (req.url.indexOf("login") > -1 || req.url.indexOf("res") > -1 || req.url.indexOf("upload") > -1) {
@@ -48,6 +66,28 @@ app.use(function(req, res, next) {
         }
     }
 })
+=======
+// app.use(function(req,res,next){
+    
+//     if(req.url.indexOf("login") > -1 || req.url.indexOf("res") > -1 || req.url.indexOf("upload") > -1){
+        
+//         next() //放行，执行后面的路由匹配
+
+//     }else{
+           
+//          if(req.session.username){
+//              next()
+//          }else{
+               
+//             res.send({
+//                 code:2,
+//                 msg:"登录失效!"
+//             })
+
+//          }
+//     }
+// })
+>>>>>>> 42ff8f150e10abf0d18a25aac3131b6f5e87ca4c
 
 User.find({ username: 'helong' }).then(res => console.log(res))
 
@@ -132,45 +172,66 @@ app.post('/api/login', (req, res) => {
 app.get('/api/search', (req, res) => {
 
     let char_type = req.query.char_type //传的参数
+    let big_price = req.query.big_price //条件查询 价格
+    let li_price = req.query.li_price
 
-    Vehicle.find({ char_type: char_type }, (err, vehicle) => {
+    console.log(char_type);
 
-        if (err) {
-            res.json({
-                code: 1,
-                msg: '无结果'
+    if(char_type!=''){
+
+        Vehicle.find({ char_type: char_type }, (err, vehicle) => {
+            if (err) {
+                res.json({
+                    code: 1,
+                    msg: '无结果'
+                })
+    
+                return
+            }
+            res.send({
+                code: 0,
+                msg: '搜寻成功',
+                data: vehicle
+            })
+        })
+    }
+
+    if(big_price!='' || li_price){
+
+        Vehicle
+        .find({})
+        .where("now_price")
+        .gt(li_price)
+        .lt(big_price)
+        .limit(5)
+        .then((data)=>{
+
+            console.log(data);
+            res.send({
+                code: 0,
+                msg: '搜寻成功',
+                data: data
             })
 
-            return
-        }
-
-        res.send({
-            code: 0,
-            msg: '搜寻成功',
-            data: vehicle
         })
 
-    })
+    }
+
+
+
 })
 
 
+ 
 
-// Vehicle.find({}).then(res => console.log(res))
 
-//  Vehicle.find({char_type:/奥迪/}).then(res=>console.log(res))
-
-// Vehicle.remove({char_type:'本田 思域 2019款 220TURBO CVT劲动版 国VI'}).then(res => console.log(res))  
-
-// Vehicle.remove({char_type:'本田 思域 2019款 220TURBO CVT劲动版 国VI'}).then(res => console.log(res))  
-
-// Vehicle.find({}).then(res =>console.log(res))
 
 
 //分页接口
 app.post('/api/page', (req, res) => {
 
     let page = req.body.page
-
+    // console.log(page);
     Vehicle
         .find({})
         .skip(40 * page)
@@ -244,7 +305,11 @@ app.post('/api/modify', (req, res) => {
 
 
 
+<<<<<<< HEAD
 Vehicle.find({ char_type: '本田22222' }).then(res => console.log(res))
+=======
+// Vehicle.find({char_type:'本田22222'}).then(res=>console.log(res))
+>>>>>>> 42ff8f150e10abf0d18a25aac3131b6f5e87ca4c
 
 
 
@@ -258,7 +323,22 @@ app.post('/api/add', (req, res) => {
 
 
 
+app.post('/api/SellAll',(req,res)=>{
 
+    let page = req.body.page
+
+    Vehicle
+    .find({})
+    .skip(4*page)
+    .limit(4)
+    .then((data)=>{
+        res.json({
+            code:0,
+            msg:'成功！',
+            data:data
+        })
+    })
+})
 
 
 

@@ -331,7 +331,7 @@
     color: whitesmoke;
 }
 .box1 div:nth-of-type(1){
-    background-image: url("img/f3eebb2bedbd15fc6fb8e3226bf35e44.png");
+    background-image: url("../img/f3eebb2bedbd15fc6fb8e3226bf35e44.png");
     background-size: cover;
     background-position: center;
     width: 102px;
@@ -352,19 +352,19 @@
 .box1 div:nth-of-type(3){
     width: 85px;
     height: 85px;
-    background-image: url("img/footer-app.5e5c77f77cb804c3d0b18276b53a52ab.png");
+    background-image: url("../img/footer-app.5e5c77f77cb804c3d0b18276b53a52ab.png");
     background-position: center;
     background-size: cover;
 }
 .box1 div:nth-of-type(4){
     width: 85px;
     height: 85px;
-    background-image: url("img/footer-app.5e5c77f77cb804c3d0b18276b53a52ab.png");
+    background-image: url("../img/footer-app.5e5c77f77cb804c3d0b18276b53a52ab.png");
     background-position: center;
     background-size: cover;
 }
 .box1 div:nth-of-type(5) p{
-    font-size: 14px;
+    font-size: 14px;                          
     color: #a5abb2;
 
     /*display: flex;*/
@@ -372,7 +372,6 @@
 }
 .box1 div:nth-of-type(5) a{
     color: #a5abb2;
-
 }
 .box2 ul{
     color: #666;

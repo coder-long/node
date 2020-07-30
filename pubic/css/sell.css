@@ -341,7 +341,13 @@ body {
     width: 270px;
     height: 180px;
 }
-
+.recent-deal .deal-list {
+    position: relative;
+    top: -15px;
+    width: 1160px;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
 
 /**/
@@ -398,9 +404,44 @@ body {
     border: 5px solid transparent;
     border-right: 5px solid #ebebeb;
 }
+
 .guazi-qa .qa-box .qa-list li .qa-con .qa-txt {
     font-size: 14px;
     color: #a5abb2;
     padding-top: 10px;
     line-height: 30px;
 }
+.recent-deal .deal-list .deal-list-wrapper li .deal-p1 {
+    font-size: 16px;
+    color: #495056;
+    padding-top: 15px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.recent-deal .deal-list .deal-list-wrapper li .deal-p1 {
+    font-size: 16px;
+    color: #495056;
+    padding-top: 15px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.recent-deal .deal-list .deal-list-wrapper li .deal-p3 {
+    font-size: 14px;
+    color: #495056;
+    line-height: 30px;
+}
+.recent-deal .deal-list .deal-list-wrapper li .deal-p3 em {
+    color: #f95523;
+    font-size: 20px;
+    margin-left: 4px;
+}
+.recent-deal .deal-list .deal-list-wrapper li .deal-p2 {
+    font-size: 14px;
+    color: #a5abb2;
+    line-height: 30px;
+}
+
