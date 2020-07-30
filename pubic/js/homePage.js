@@ -20,6 +20,7 @@ $('.pop-close').on('click', function() {
 /* -----------注冊界面--------------------------- */
 let url = '/api/res'
 $('.zhuce-btn').on('click', function() {
+
     let username = $('.username').val()
     let pwd = $('.pwd').val()
     if (username == '' || pwd == '') {
@@ -47,3 +48,32 @@ $('.zhuce-btn').on('click', function() {
 })
 
 /* ------------------登录界面-------------------------- */
+// let url = '/api/login'
+$('.sub-btn').on('click', function() {
+    let username = $('.dengluusername').val()
+    let pwd = $('.zhucepwd').val()
+    console.log(username);
+    console.log(pwd);
+    if (username == '' && pwd == '') {
+        alert('请输入用户名或密码')
+        return
+    } else {
+        $.ajax({
+            type: "post",
+            url: '/api/login',
+            data: {
+                username,
+                pwd
+            },
+            success(data) {
+                console.log(data);
+                if (data.code == 1) {
+                    alert('用户名或密码错误！')
+                } else if (data.code == 0) {
+                    alert('登录成功');
+                    $('.pop-box').hide();
+                }
+            }
+        })
+    }
+})
