@@ -102,7 +102,7 @@ app.post('/api/login', (req, res) => {
     let user = req.body
 
 
-    User.findOne({ username: user.usernamem, pwd: user.pwd }, (err, user) => {
+    User.findOne({ username: user.username, pwd: user.pwd }, (err, user) => {
 
         if (err) {
             res.json({
