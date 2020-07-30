@@ -143,15 +143,11 @@ app.get('/api/search', (req, res) => {
     let li_price = req.query.li_price
 
     let char_type1 = char_type.split(' ')
-    for(let i = 0;i<char_type1.length;i++){
-
-        console.log(char_type1[i]);
-    }
-
-    console.log(char_type);
-
-    if(char_type!=''){
-        let xx = '本田.*2015款' 
+    if(char_type){
+        let xx = ''
+        for(let i = 0;i<char_type1.length;i++){
+            xx += `${char_type1[i]}.*`
+        }
         var name=eval("/" + xx +"/i"); 
         Vehicle
         .find({ char_type:name })
@@ -163,7 +159,20 @@ app.get('/api/search', (req, res) => {
                 data:data
             })
         })
+        .catch((err)=>{
+            res.json({
+                code:1,
+                msg:'失败哦'
+                
+            })
+        })
+            
+        
+        
+       
     }
+
+
 
     if(big_price!='' || li_price){
 
