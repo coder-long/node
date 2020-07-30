@@ -1,0 +1,842 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a, body {
+    color: #181818;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.section{
+    width: 100%;
+    height: 100%;
+}
+a,
+abbr,
+acronym,
+address,
+applet,
+b,
+big,
+blockquote,
+body,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+u,
+ul,
+var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+}
+
+body {
+    height: 100%;
+    min-width: 1200px;
+    background: #fff;
+    font: 12px/1.5 PingFang SC, Microsoft YaHei, arial, helvetica, sans-serif;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 arial, helvetica, clean, sans-serif;
+}
+
+
+/* header */
+
+.index-header {
+    position: relative;
+    /* background: url(../img/buyInfo/9c2d7bfaed19709bbbb9cb305e1ddffe.jpg) #07370d no-repeat; */
+    /* background-color: burlywood; */
+    background-color: #fcfcfc;
+    background-size: 1920px 100%;
+    background-position: 50%;
+    height: 55px;
+    width: 100%;
+    margin: 0 auto;
+}
+.index-header .header-2 .header{
+    color: #808386 !important;
+    
+}
+.index-header .header-2 {
+    border-bottom: none;
+}
+
+.header-2 {
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+}
+
+.index-header .header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 8;
+    margin-left: -600px;
+    border-bottom: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.header {
+    width: 1200px;
+    height: 55px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    float: left;
+}
+
+.header-2 h1 a {
+    display: block;
+    width: 55px;
+    height: 55px;
+    background-image: url("../img/buyInfo/logo.png");
+    background-size: 100% 100%;
+}
+.header-2{
+    border: 1px solid transparent;
+    color: #fff;
+    display: inline-block;
+    width: 6px;
+    height: 3px;
+    background: url(../img/buyInfo/Triangle.1f79e749aad1ff66a62c0b434f283a58.png);
+    background-size: 100% 100%;
+}
+.header-2 .uc {
+    color: #495056;
+    background-position: 6px -268px;
+}
+
+.uc {
+    line-height: 16px;
+    float: right;
+    cursor: pointer;
+    margin-top: 19px;
+    margin-left: 10px;
+    font-size: 14px;
+    /* color: #fff; */
+    padding-left: 24px;
+    background-position: 6px -265px;
+    position: relative;
+    padding-bottom: 16px;
+    background-image: url(../img/buyInfo/icon_@2x_s.5dfd8e0395d1a3188c98507b746b6df4.png);
+    background-size: 451px 300px;
+}
+/* 
+.header-2 .uc .uc-my {
+    color: #fff;
+} */
+
+.uc .uc-my {
+    display: inline-block;
+    line-height: 16px;
+}
+
+.header-2 .header .uc .uc-my:hover {
+    color: green;
+} 
+
+.header-2 .header-phone {
+    /* color: #fff; */
+    border-right: 1px solid #fff
+}
+
+.header-phone {
+    float: right;
+    color: #181818;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0 15px 0 0;
+    margin-top: 19px;
+    margin-left: 30px;
+    border-right: 1px solid #181818;
+}
+
+.nav-list {
+    float: right;
+    width: 700px;
+    height: 42px;
+    padding-top: 7px;
+}
+
+/* .header-2 .nav-list a {
+    color: #fff;
+} */
+
+.nav-list a {
+    float: right;
+    line-height: 40px;
+    margin: 0 20px;
+    font-size: 14px;
+    /* color: #fff; */
+}
+
+.header-2 .nav-list a.active {
+    border-bottom: 2px solid #fff;
+}
+.header-2 .nav-list a:hover {
+    color: green;
+    /* border-bottom-color: #fff; */
+    /* font-weight: 700; */
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.placeon {
+    /* width: 1200px; */
+    height: 63px;
+    margin: 0 auto;
+    line-height: 63px;
+    font-size: 13px;
+    color: #495056;
+    padding-left: 900px;
+}
+.placeon .car-error {
+    padding: 0 6px 0 26px;
+    border: 1px solid #e6e6e6;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    margin-left: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+.icon-glass {
+    background-position: -94px -31px;
+    width: 16px;
+    height: 15px;
+    left: 6px;
+    top: 5px;
+    position: absolute;
+    z-index: 10;
+    background-image: url('https://cli-sta.guazistatic.com/c2c_web/icon-detail.3f29e84299556197e522c67272cb3041.png');
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.info-main{
+    height: 650px;
+    position: relative;
+}
+.info-main .product-detail{
+    width: 602px;
+    height: 502px;
+    /* float: left; */
+    /* overflow: hidden; */
+}
+.info-main .info{
+    width: 562px;
+    height: 545px;
+    padding-left: 36px;
+    /* float: right; */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.product-detail {
+    width: 602px;
+    float: left;
+    /* position: relative; */
+}
+.product-detail .bigimgbox {
+    height: 402px;
+    margin-bottom: 16px;
+    position: relative;
+    top: 0;
+    bottom: 19%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.icon-warn {
+    background-color: rgba(0,0,0,.3);
+    width: 66px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 30px;
+    font-size: 14px;
+    color: #fff;
+    top: 1px;
+    right: 1px;
+    position: absolute;
+    z-index: 1;
+}
+.icon-warn:before {
+    content: "";
+    background-position: -126px 0;
+    width: 16px;
+    height: 18px;
+    top: 5px;
+    left: 10px;
+    position: absolute;
+    background-image: url(https://cli-sta.guazistatic.com/c2c_web/icon-detail.3f29e84299556197e522c67272cb3041.png);
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.icon-collect-star {
+    width: 35px;
+    height: 30px;
+    top: 1px;
+    right: 97px;
+    background-position: -86px 6px;
+    position: absolute;
+    z-index: 1;
+    background-image: url(https://cli-sta.guazistatic.com/c2c_web/icon-detail.3f29e84299556197e522c67272cb3041.png);
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,.3);
+
+}
+.bigimgbox .page-number {
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    z-index: 9;
+}
+.bigimgbox{
+    background-image: url('https://image1.guazistatic.com/qn20072808052413e6a325ef35a8eafa6919eed1c4d9a1.jpg?imageView2/1/w/600/h/400/q/88');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.f20 {
+    font-size: 20px;
+}
+.det-picside{
+    width: 600px;
+    height: 400px;
+    display: inline-block;
+    /* overflow: hidden; */
+    position: relative;
+}
+.js-bigpic{
+    position: absolute;
+}
+/* .smallimgbox{
+    width: 602px;
+    height: 84px;
+    
+} */
+.smallImg{
+    width: 602px;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+}
+.smallImg li{
+    display: inline-block;
+    width: 118px;
+    height: 80px;
+    margin: 0 3px;
+    background-position: center;
+    background-size: cover;
+}
+.smallImg li:hover{
+    outline: 3px solid salmon;
+}
+.smallImg li:nth-child(1){
+    margin-left: 0;
+}
+.titleBox{
+    display: inline-block;
+    color: #495056;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 30px;
+    padding-top: 7px;
+    max-height: 60px;
+    overflow: hidden;
+    margin-bottom: 22px;
+}
+.labels{
+    color: #d7a844;
+    background: #fcf2d5;
+    display: inline-block;
+    padding: 0 7px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 2px;
+    margin-right: 3px;
+    vertical-align: top;
+    margin-top: 3px;
+}
+.assort{
+    margin-bottom: 15px;
+}
+.assort li {
+    display: inline-block;
+    /* float: left; */
+    text-align: center;
+    color: #a5abb2;
+    line-height: 24px;
+    font-size: 12px;
+    position: relative;
+}
+.assort li.one{
+    width: 117px;
+}
+.assort li.two {
+    width: 146px;
+}
+.assort li.three {
+    width: 97px;
+}
+.assort li.last {
+    width: 81px;
+}
+.assort li span {
+    display: block;
+    color: #495056;
+    font-size: 18px;
+    font-family: Microsoft Yahei;
+    padding-bottom: 3px;
+    
+}
+.assort li:before {
+    content: "";
+    height: 34px;
+    width: 1px;
+    background-color: #e6e6e6;
+    position: absolute;
+    top: 9px;
+    left: 0;
+}
+.assort li.one:before {
+    width: 0;
+}
+.priceBox{
+    margin-bottom: 22px;
+}
+.priceBox .price-title {
+    color: #303741;
+    font-size: 12px;
+    line-height: 18px;
+}
+.ask-lastprice{
+    margin-top: 9px;
+    float: right;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #fb997b;
+    color: #fa5428;
+    background: #fff;
+    text-align: center;
+    padding: 0 12px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+.app-qrcode{
+    float: right;
+    margin-top: 9px;
+    margin-right: 12px;
+    height: 22px;
+    line-height: 22px;
+    position: relative;
+}
+.app-qrcode .qrcode-btn{
+    background: #fff;
+    border-radius: 11px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #22ac38;
+    padding: 0 28px 0 12px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #22ac38;
+}
+/* .app-qrcode .qrcode-btn:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: url("../img/buyInfo/icon_@2x_s.5dfd8e0395d1a3188c98507b746b6df4.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: 12px;
+} */
+.app-qrcode .qrcode-box {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    z-index: 10;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #d8dde6;
+    border-radius: 8px;
+    text-align: center;
+}
+.hidden{
+    display: none;
+}
+.priceBox{
+    margin-bottom: 65px;
+}
+.priceBox .price-num {
+    font-size: 30px;
+    color: #303741;
+    line-height: 40px;
+    font-weight: 500;
+    float: left;
+}
+.priceBox .price-origin{
+    font-size: 14px;
+    float: left;
+    margin-top: 16px;
+    margin-left: 9px;
+    color: #8f96a0;
+    line-height: 18px;
+    text-decoration: line-through;
+}
+
+.finance-box {
+    height: 104px;
+    background: #f1f9ef;
+    position: relative;
+    padding: 9px 20px 0 115px;
+    margin-bottom: 19px;
+}
+.finance-box .icon_pay_one {
+    width: 74px;
+    height: 102px;
+    display: inline-block;
+    position: absolute;
+    left: 21px;
+    top: 9px;
+    background: url("https://image.guazistatic.com/gz01191015/17/26/05e043b9adc25657ad3b6cb3512647f5.png") no-repeat;
+    background-size: 100% 100%;
+}
+.loanbox{
+    height: 46px;
+    line-height: 46px;
+    color: #22ac38;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #d4efd6;
+}
+.f24 {
+    font-size: 24px;
+    padding-right: 5px;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    height: 44px;
+}
+.loanbox .text-r {
+    float: right;
+    display: inline-block;
+}
+.loan-num{
+    padding: 14px 0 16px;
+    height: 22px;
+    line-height: 22px;
+    display: block;
+    color: #061721;
+}
+.icon_ln{
+    background-position: -394px -371px;
+    width: 17px;
+    height: 18px;
+    vertical-align: middle;
+    margin-top: -1px;
+    margin-right: 6px;
+    background-image: url(https://cli-sta.guazistatic.com/c2c_web/icon-detail.3f29e84299556197e522c67272cb3041.png);
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.finance-box .loan-num .text-r {
+    float: right;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #fb997b;
+    color: #fa5428;
+    background: #fff;
+    text-align: center;
+    padding: 0 12px;
+    border-radius: 12px;
+}
+.service-protect{
+    /* width: 508px; */
+    height: 100px;
+    background: #fffdf9;
+    margin-bottom: 20px;
+    padding: 25.5px 27px 10.5px 25px;
+    border: 1px solid #fcf2d5;
+}
+.service-protect .service-protect-title {
+    font-size: 14px;
+    color: #495056;
+    line-height: 14px;
+    padding-bottom: 27px;
+}
+.service-protect .text-service {
+    line-height: 14px;
+    display: inline-block;
+    padding-right: 8px;
+    color: #495056;
+    font-size: 14px;
+}
+.service-protect .look-detail {
+    color: #495056;
+    float: right;
+    line-height: 14px;
+    font-size: 14px;
+}
+.icon-gray-right7x11 {
+    background-position: -394px -11px;
+    width: 7px;
+    height: 11px;
+    margin-left: 5px;
+    background-image: url(https://cli-sta.guazistatic.com/c2c_web/icon-detail.3f29e84299556197e522c67272cb3041.png);
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.service-protect-list{
+    height: 90px;
+}
+.service-protect-list li {
+    width: 25%;
+    float: left;
+    line-height: 14px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #495056;
+}
+/* .service-protect-list li span {
+    white-space: nowrap;
+    width: 107px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+} */
+.service-protect-list li i{
+    background: url(https://cli-sta.guazistatic.com/c2c_web/detail-icon-serveic@2x.a6794e78e4fa5fc2d8fba91c4808df06.png) no-repeat;
+    background-size: 14px 157.5px;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.service-protect-list li i.icon-30xiu {
+    background: url(https://cli-sta.guazistatic.com/c2c_web/30xiu.36e1e43e2cf3cc14213828efbed34d08.png) no-repeat;
+    background-size: 14px 14px;
+    
+}
+.service-protect-list li i.icon-one {
+    background-position: 0 -99px;
+}
+.service-protect-list li i.icon-three {
+    background-position: 0 1px;
+}
+.service-protect-list li i.icon-four {
+    background-position: 0 -58px;
+}
+.service-protect-list li i.icon-eight {
+    background-position: 0 -135px;
+}
+.service-protect-list li i.icon-five {
+    background-position: 0 -37px;
+}
+.service-protect-list li i.icon-seven {
+    background-position: 0 -116px;
+}
+.service-protect-list li i.icon-six {
+    background-position: 0 -16px;
+}
+.btnbox{
+    width: 562px;
+    margin-left: -25px;
+}
+.orgbtn{
+    background-color: #fd6c34;
+    position: relative;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 20px;
+    display: inline-block;
+    width: 174px;
+    height: 48px;
+    line-height: 48px;
+    vertical-align: top;
+    color: #fff;
+    margin-right: 17px;
+}
+.greenbtn{
+    width: 172px;
+    background-color: #2abd53;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 20px;
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    vertical-align: top;
+    color: #fff;
+    margin-right: 17px;
+}
+.freephonebtn {
+    width: 172px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #2abd53;
+    background-color: #f6fcf7;
+    color: #2abd53;
+    margin-right: 0;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+}
+/*=============底部=====================*/
+.footer{
+    /*width: 80%;*/
+    height: 350px;
+    background-color: #2a2c37;
+    
+}
+.footerBox{
+    width: 80%;
+    margin: auto;
+    padding: 40px 0 ;
+}
+
+.box1{
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke ;
+}
+
+.box1 p{
+    color: whitesmoke;
+}
+.box1 div:nth-of-type(1){
+    background-image: url("../img/buyInfo/logo.png");
+    background-size: cover;
+    background-position: center;
+    width: 102px;
+    height: 102px;
+}
+.box1 div:nth-of-type(2){
+    width: 378.6px;
+    height: 140px;
+    font-size: 14px;
+    color: #a5abb2;
+    display: flex;
+    flex-wrap: wrap;
+}
+.box1 div:nth-of-type(2) p{
+    font-size: 14px;
+    color: #a5abb2;
+}
+.box1 div:nth-of-type(3){
+    width: 85px;
+    height: 85px;
+    background-image: url("https://image1.guazistatic.com/qn1909231407351f42a7e2be00ae422dc6c1e57ae92571.png");
+    background-position: center;
+    background-size: cover;
+}
+.box1 div:nth-of-type(4){
+    width: 85px;
+    height: 85px;
+    background-image: url("https://cli-sta.guazistatic.com/c2c_web/footer-app.5e5c77f77cb804c3d0b18276b53a52ab.png");
+    background-position: center;
+    background-size: cover;
+}
+.box1 div:nth-of-type(5) p{
+    font-size: 14px;
+    color: #a5abb2;
+
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+}
+.box1 div:nth-of-type(5) a{
+    color: #a5abb2;
+
+}
+.box2 ul{
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    /*margin: 0 5px;*/
+}
+.box2 ul li {
+    margin: 0 10px;
+    font-size: 12px;
+}
+.box2 ul li a{
+    color: #666;
+}
+.box2>p{
+    color: #666;
+    font-size: 12px;
+}
