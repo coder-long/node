@@ -142,23 +142,25 @@ app.get('/api/search', (req, res) => {
     let big_price = req.query.big_price //条件查询 价格
     let li_price = req.query.li_price
 
+    let char_type1 = char_type.split(' ')
+    for(let i = 0;i<char_type1.length;i++){
+
+        console.log(char_type1[i]);
+    }
+
     console.log(char_type);
 
     if(char_type!=''){
-
-        Vehicle.find({ char_type: char_type }, (err, vehicle) => {
-            if (err) {
-                res.json({
-                    code: 1,
-                    msg: '无结果'
-                })
-    
-                return
-            }
+        let xx = '本田.*2015款' 
+        var name=eval("/" + xx +"/i"); 
+        Vehicle
+        .find({ char_type:name })
+        .limit(10)
+        .then((data)=>{
             res.send({
-                code: 0,
-                msg: '搜寻成功',
-                data: vehicle
+                code:0,
+                msg:'成功！',
+                data:data
             })
         })
     }
@@ -184,14 +186,7 @@ app.get('/api/search', (req, res) => {
 
     }
 
-
-
 })
-
-
- 
-
-
 
 
 //分页接口
@@ -271,11 +266,6 @@ app.post('/api/modify', (req, res) => {
 
 
 
-
-// Vehicle.find({char_type:'本田22222'}).then(res=>console.log(res))
-
-
-
 // 添加接口
 app.post('/api/add',(req,res)=>{
     let char_type = req.body.char_type //传入的类型
@@ -320,8 +310,6 @@ app.post('/api/hot', (req, res) => {
 
 
 
-
-
 //收藏页面
 app.get('/api/collect', (req, res) => {
     Aa.find({}).then((data) => {
@@ -360,7 +348,6 @@ app.get('/api/jiangjia', (req, res) => {
         })
 
     })
-
 
 })
 

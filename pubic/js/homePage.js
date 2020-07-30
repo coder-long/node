@@ -52,7 +52,11 @@ $('.zhuce-btn').on('click', function() {
 /* ------------------登录界面-------------------------- */
 $('.sub-btn').on('click', function() {
     let username = $('.dengluusername').val()
+<<<<<<< HEAD
     let pwd = $('.denglupwd').val()
+=======
+    let pwd = $('.zhucepwd').val()
+>>>>>>> de05c0d2f93984db1f391a3b7fd47535c875d307
     if (username == '' && pwd == '') {
         alert('请输入用户名或密码')
         return
@@ -76,7 +80,11 @@ $('.sub-btn').on('click', function() {
                     $('.uc-my').on('click', function() {
                         alert('个人用户中心还在开发中，哭兮兮。。。。')
                         $('.dengluusername').val('');
+<<<<<<< HEAD
                         $('.denglupwd').val('');
+=======
+                        $('.zhucepwd').val('');
+>>>>>>> de05c0d2f93984db1f391a3b7fd47535c875d307
                         $('.pop-box').hide();
                     })
                 }
