@@ -192,15 +192,6 @@ app.get('/api/search', (req, res) => {
  
 
 
-// Vehicle.find({}).then(res => console.log(res))
-
-//  Vehicle.find({char_type:/奥迪/}).then(res=>console.log(res))
-
-// Vehicle.remove({char_type:'本田 思域 2019款 220TURBO CVT劲动版 国VI'}).then(res => console.log(res))  
-
-// Vehicle.remove({char_type:'本田 思域 2019款 220TURBO CVT劲动版 国VI'}).then(res => console.log(res))  
-
-// Vehicle.find({}).then(res =>console.log(res))
 
 
 //分页接口
@@ -295,7 +286,22 @@ app.post('/api/add',(req,res)=>{
 
 
 
+app.post('/api/SellAll',(req,res)=>{
 
+    let page = req.body.page
+
+    Vehicle
+    .find({})
+    .skip(4*page)
+    .limit(4)
+    .then((data)=>{
+        res.json({
+            code:0,
+            msg:'成功！',
+            data:data
+        })
+    })
+})
 
 
 
