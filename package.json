@@ -1,0 +1,29 @@
+{
+  "name": "lev3",
+  "version": "1.0.0",
+  "description": "Phase 3 Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coder-long/LEV3.git"
+  },
+  "author": "三组",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coder-long/LEV3/issues"
+  },
+  "homepage": "https://github.com/coder-long/LEV3#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "formidable": "^1.2.2",
+    "mongoose": "^5.9.25"
+  }
+}
