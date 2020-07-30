@@ -24,6 +24,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "formidable": "^1.2.2",
+    "express-session": "^1.17.1",
     "mongoose": "^5.9.25"
   }
 }
