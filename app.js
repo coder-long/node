@@ -9,17 +9,20 @@ const { Vehicle, Aa, Bb, Cc } = require('./module/vehicle')
 let db = require('./module/db')
 let app = express()
 
-app.use(session({ //
-    secret:"gaongaoge",//生成唯一的令牌要加密 这个就是加密的密钥
-    resave:false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
-    rolling:true, //每次请求都重置 cookie的设置
-    cookie:{
-         maxAge:10000*1000*3600,
-         secure:false, // 如果为true ，这个cookie的设置只能是 https 
-         sameSite:"lax", // 允许三方访问cookie否
-         httpOnly:true //只能在http协议下 访问 cookie
-    }
-}))
+// app.use(session({ //
+//     secret:"gaongaoge",//生成唯一的令牌要加密 这个就是加密的密钥
+//     resave:false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
+//     rolling:true, //每次请求都重置 cookie的设置
+//     cookie:{
+//          maxAge:10000*1000*3600,
+//          secure:false, // 如果为true ，这个cookie的设置只能是 https 
+//          sameSite:"lax", // 允许三方访问cookie否
+//          httpOnly:true //只能在http协议下 访问 cookie
+//     }
+// }))
+
+
+
 app.use(express.static(path.join(__dirname, 'pubic')))
 app.use(express.static(path.join(__dirname, 'uplodeImg')))
 app.use(cors())
@@ -28,26 +31,26 @@ app.use(bodyParser.urlencoded({ //处理前端表单post "a=1;b=2"
     extended: true
 }))
 
-app.use(function(req,res,next){
+// app.use(function(req,res,next){
     
-    if(req.url.indexOf("login") > -1 || req.url.indexOf("res") > -1 || req.url.indexOf("upload") > -1){
+//     if(req.url.indexOf("login") > -1 || req.url.indexOf("res") > -1 || req.url.indexOf("upload") > -1){
         
-        next() //放行，执行后面的路由匹配
+//         next() //放行，执行后面的路由匹配
 
-    }else{
+//     }else{
            
-         if(req.session.username){
-             next()
-         }else{
+//          if(req.session.username){
+//              next()
+//          }else{
                
-            res.send({
-                code:2,
-                msg:"登录失效!"
-            })
+//             res.send({
+//                 code:2,
+//                 msg:"登录失效!"
+//             })
 
-         }
-    }
-})
+//          }
+//     }
+// })
 
 User.find({username:'helong'}).then(res=>console.log(res))
 
@@ -174,7 +177,7 @@ app.get('/api/search', (req, res) => {
 app.post('/api/page', (req, res) => {
 
     let page = req.body.page
-
+    // console.log(page);
     Vehicle
     .find({})
     .skip(40 * page)
