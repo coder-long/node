@@ -1,10 +1,15 @@
-var $ = (selector)=> document.querySelector.call(document,selector);
+// var $ = (selector)=> document.querySelector.call(document,selector);
+
 $(".qrcode-btn").onmouseenter = ()=>{
     $(".qrcode-box").classList.remove("hidden")
 }
 $(".qrcode-btn").onmouseleave = ()=>{
     $(".qrcode-box").classList.add("hidden")
 }
+
+var data = cookie.getCookie(data)
+$('.info .titleBox').html(data)
+console.log($('.info .titleBox'));
 
 
 // class car{
@@ -21,6 +26,8 @@ $(".qrcode-btn").onmouseleave = ()=>{
 
 // }
 
+
+
 var imgarr0 = [
     'https://image1.guazistatic.com/qn20072808052413e6a325ef35a8eafa6919eed1c4d9a1.jpg?imageView2/1/w/600/h/400/q/88',
     'https://image1.guazistatic.com/qn200728080525a0713153afd65f24885e7cd3b63f9285.jpg?imageView2/1/w/600/h/400/q/88',
@@ -36,9 +43,14 @@ var imgarr0 = [
 //     "https://image1.guazistatic.com/qn200728080525788bbd06eb249aba34aa8357fe663cb9.jpg?imageView2/1/w/120/h/80/q/88",
 //     "https://image1.guazistatic.com/qn2007280805272f1bf5723bcc45be8769308094fea225.jpg?imageView2/1/w/120/h/80/q/88"
 // ];
+
+
+
+
+
 var imgBox = document.querySelector('.bigimgbox');
 var smallImg = document.querySelector('.smallImg');
-console.log(smallImg);
+
 class carImg {
     constructor(urls){
         this.urls = urls;
