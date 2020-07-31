@@ -6,6 +6,7 @@ var VehicleSchema = require("../schema/vehicle");
 var aa = require("../schema/shoucang");
 var bb = require("../schema/liulan");
 var cc = require("../schema/jiangjia");
+var sell = require('../schema/value_sell')
 
 var mongoose = require("mongoose");
 
@@ -17,12 +18,15 @@ var Bb = mongoose.model("liulan", bb)
 
 var Cc = mongoose.model("jj", bb)
 
+var Sell = mongoose.model('sell',sell)
+
 
 module.exports = {
         Vehicle,
         Aa,
         Bb,
-        Cc
+        Cc,
+        Sell
     }
     // module.exports = Aa
     // module.exports = Bb
