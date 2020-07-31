@@ -300,6 +300,31 @@ app.get("/api/jiangjia", (req, res) => {
   });
 });
 
+
+app.post('/api/sell',(req,res)=>{
+
+    let char_type = req.body.char_type
+    let year = req.body.year
+    let number = req.body.number
+    let now_price = req.body.now_price
+    let pre_price = req.body.pre_price
+    let mileage = req.body.mileage
+
+    Sell
+    .insertMany({char_type:char_type,year:year,number:number,now_price:now_price,pre_price:pre_price,mileage:mileage})
+    .then((data)=>{
+        res.send({
+            code:0,
+            msg:"成功！",
+            data:data
+        })
+    })
+
+})
+
+
+
+
 app.listen(8828, () => {
   console.log("服务已开启！");
 });
