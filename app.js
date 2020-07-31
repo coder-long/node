@@ -300,7 +300,7 @@ app.get("/api/jiangjia", (req, res) => {
   });
 });
 
-
+//卖出
 app.post('/api/sell',(req,res)=>{
 
     let char_type = req.body.char_type
@@ -309,9 +309,21 @@ app.post('/api/sell',(req,res)=>{
     let now_price = req.body.now_price
     let pre_price = req.body.pre_price
     let mileage = req.body.mileage
+    let sell_find = {
+        char_type:char_type,
+        year:year,
+        number:number,
+        now_price:now_price,
+        pre_price:pre_price,
+        mileage:mileage
+    }
 
     Sell
-    .insertMany({char_type:char_type,year:year,number:number,now_price:now_price,pre_price:pre_price,mileage:mileage})
+    .find(sell_find)
+    .then((data)=>{
+        console.log(data);
+    })
+    .insertMany(sell_find)
     .then((data)=>{
         res.send({
             code:0,
