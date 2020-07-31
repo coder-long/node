@@ -244,22 +244,46 @@
                         </a>
                     </div>
                 </div>
-                <div class="carListBox">
-                    
-                    
+
+                <div class="l_box">
+
+                    <div class="carListBox">
+                        
+                        
+                    </div>
+                    <div class="pageChange">
+                        <button value="1">1</button>
+                        <button value="2">2</button>
+                        <button value="3">3</button>
+                        <button value="4">4</button>
+                        <button value="5">5</button>
+                        <button value="6">6</button>
+                        <button value="7">7</button>
+                        <button value="8">8</button>
+                        <button value="9">9</button>
+                        <button value="10">10</button>
+                    </div>
                 </div>
-                <div class="pageChange">
-                    <button value="1">1</button>
-                    <button value="2">2</button>
-                    <button value="3">3</button>
-                    <button value="4">4</button>
-                    <button value="5">5</button>
-                    <button value="6">6</button>
-                    <button value="7">7</button>
-                    <button value="8">8</button>
-                    <button value="9">9</button>
-                    <button value="10">10</button>
+                <div class="l_box1" style="display: none;">
+
+                    <div class="carListBox">
+                        
+                        
+                    </div>
+                    <div class="pageChange">
+                        <button value="1">1</button>
+                        <button value="2">2</button>
+                        <button value="3">3</button>
+                        <button value="4">4</button>
+                        <button value="5">5</button>
+                        <button value="6">6</button>
+                        <button value="7">7</button>
+                        <button value="8">8</button>
+                        <button value="9">9</button>
+                        <button value="10">10</button>
+                    </div>
                 </div>
+
             </div>
         </div>
         <div class="footer">
@@ -473,7 +497,6 @@
     //         console.log((res))
     //     })
     // }
-    //
     // )
 
     class car {
@@ -499,7 +522,7 @@
                     <p>${this.now_price}</p>
                 </div>
             `
-            $('.carListBox').append(html)
+            $('.carListBox').append(html);
         }
     }
 
@@ -517,24 +540,38 @@
         }
     });
 
-    $('.pageChange button').click(function(){
 
-        let page = this.value
+    // $.post(url, {page:1}, (res) => {
+    //     $('.carListBox').html('');
+    //     $.each(res.data, (index, value) => {
+    //         new car(value);
+    //     })
+    // })
+ 
+    $('.pageChange button').on('click',function(){
+
+        let page = this.value;
+
 
         $.post(url, {page:page}, (res) => {
-            $('.carListBox').html('')
+            $('.carListBox').html('');
             $.each(res.data, (index, value) => {
-                new car(value)
+                new car(value);
             })
         })
     })
-    
 
     let search_url1 = '/api/search'
     $('.selection input').on('keydown',function(e){
 
         if(e.keyCode == 13){
-           let char_type = $('.selection input').val()
+            $('.l_box').css({
+                'display':'none'
+            })
+            $('.l_box1').css({
+                'display':'block'
+            })
+           let char_type = $('.selection input').val();
            console.log(char_type);
 
            $.get(search_url1,{char_type: char_type},(res)=>{
