@@ -226,6 +226,54 @@ body {
     border: none;
     background: #fff;
 }
+/*弹窗*/
+
+.sellcar{
+    width: 800px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #F9FAFC;
+    border: 1px solid #D8DDE6;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(241,243,244);
+    display: none;
+}
+
+.wrapper__header {
+    height: 56px;
+    background-image: -webkit-linear-gradient(top, #FBFCFD 0%, #F5F7FA 100%);
+    background-image: linear-gradient(180deg, #FBFCFD 0%, #F5F7FA 100%);
+    border-bottom: 1px solid #D8DDE6;
+    line-height: 56px;
+    font-size: 18px;
+    color: #303741;
+    font-family: PingFangSC-Semibold;
+    font-weight: 700;
+    padding-left: 20px;
+}
+.wrapper__close {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAABJZJREFUWAntVm1MW1UYPqedOAwTP6Y/1GR/NH5km8UCgU50ihp00cyPEP1hBhJrKavhjrmPmGij0ZnIaNV10jrXkmg0VYImRp10s4lWyKQREvWv/tmmc+gaW0rB3uNzbu9p1/b29pZ/Gk7SnvO+53mf89z3fBKyWlYz8D/LAK30PXb70PoMlZ311Dw6Ojp8thKuFr/DsfvqNMs6Gtas9fl8B+a1YjUFOZ3uhoVs4lvG2K2Ekh9NdfV3B9868IcWgVFfr2v/VfJS+gRhZCOldG79OvOW4eHhVGm8qdTB7WWa2IBqk9IHAjmTjgwM7L9SsVfwx7PNMovHuRg1fNP834yPUVY0Bb3j8/xEKO0DmqkRm1PL6UifJF1RxlDFwWOWqBxhhCkfiOzInDvoP/izVqimIA4MjY6EEPg0mooo/Fn+WSCR/v59l2sRafk4lscoU58DMM6pcGsFwFdREMeP+T3vgsCBZi5TjDUtyJnJnkH3Zbxfr3AMxxLEqDhGTaZnIOaoXpxZr5P3zcWn403N7b+juQ0/vgmuocuLna3WO8PxeCwDu6zY7Xsbs8upSXQ0q50MU+UM+T2BMnCJo6ogjp+NT89YrG3n0HxAjb9WJtm7Omxd4ZMno0WiXC73pels6iuktFXFIsl0J8S8LWy92pAgToBMfW+x2v7C7N2vEl6XkRe3WjvvCP8Qiy1x31N79qxbXEgdQ7NNxUAMeTbk9/qEXa3WPIf0gnrsuwYZkT0Cg6+PXWJu7OI2zq4vsYC35PuISQoFRrzCNlLXLIiT7rBLQ8jUsBgAor7hbYjpED4st91jAc/Bgm2sZXjKLqTD9E1ZWtrS2Hv3qv4NqPkvV0xk75jfmxcs3EbqFQnixHMz07Emq7JUthYNROmLEPNqka8GQ/cc0uORJKkeK/aCKVLRjHT0uN1r9WL1+lYkiA/4Z4p8gjXTWU7O7mGnE5+uVFTNglyuNy8mZxITWML3CTEmSl+ixPSysJU+YBRswWmoVdMacrvddWcTv00gM+Is4nfPK8GA94XZ+NTXTS3tdVjoYhqvX5LP37b9wa6Po9Fo1pAagAwL4mJ+OZMYx97mV4hSKKGvhQLe54U9OzN9AtdMPezbVd8NiWTGAlHjRkUZEmS3+y+aT576CGIeEoPj7Hk9FPDsE7aocc1ELM22BkybTfXdCFGbW6294/H4Z7LAVaqrCkJm1pxLngpDzHZBgutgBNfBc8IurefiU5MWa3sj/O1q301ZOr/x4VymdEXpCuJifj2d+BBf+4gYFJl5A2J2CbtSjcPzGKaPv53EvXbz+WTmFoiawPRVFFVxl4XDYTPWzPt46T1aGJQewq09WLD1WzksPZRHMfYY5+TceV9JQ/Mu4wGfR6beg5jHBR6ZOYwBBoRdS73DPngY+P58DCUfbOu0Pdnd3V22+zQz9MXx76QiMYT4g6MjO/OENTaUD6G08Dhj5Ak+hhaNpiBs5yjehslcgOlI0O/pR4Zyz1gtlio+HounK57CpiMKFNzKGFXiirr7HFJrr0OScAhqTmsR2KDBuThnj3OoxWDIKmw1A//9DPwL4DK0yNlKD/wAAAAASUVORK5CYII=);
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    right: 20px;
+    top: 20px;
+}
+
+.sellcarTable td{
+    width: 130px;
+    font-size: 18px;
+}
+.sellcarTable input{
+    height: 30px;
+    font-size: 15px;
+}
+
 .phone-area .phone-btn-1 {
     background: #22ac38;
     margin-right: 15px;
