@@ -103,29 +103,29 @@
             <div class="selectList">
                 <ul class="trademark">
                     <p>品牌</p>
-                    <li><a href="#" class="hoverColorGreen">不限</a></li>
-                    <li><a href="#" class="hoverColorGreen">丰田</a></li>
-                    <li><a href="#" class="hoverColorGreen">本田</a></li>
-                    <li><a href="#" class="hoverColorGreen">别克</a></li>
-                    <li><a href="#" class="hoverColorGreen">奔驰</a></li>
-                    <li><a href="#" class="hoverColorGreen">福特</a></li>
-                    <li><a href="#" class="hoverColorGreen">现代</a></li>
-                    <li><a href="#" class="hoverColorGreen">宝马</a></li>
-                    <li><a href="#" class="hoverColorGreen">奥迪</a></li>
-                    <li><a href="#" class="hoverColorGreen">吉利</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">不限</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">丰田</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">本田</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">别克</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">奔驰</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">福特</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">现代</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">宝马</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">奥迪</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">吉利</a></li>
                 </ul>
                 <ul class="trademark">
                     <p>车系</p>
-                    <li><a href="#">不限</a></li>
-                    <li><a href="#">丰田</a></li>
-                    <li><a href="#">本田</a></li>
-                    <li><a href="#">别克</a></li>
-                    <li><a href="#">奔驰</a></li>
-                    <li><a href="#">福特</a></li>
-                    <li><a href="#">现代</a></li>
-                    <li><a href="#">宝马</a></li>
-                    <li><a href="#">奥迪</a></li>
-                    <li><a href="#">吉利</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">不限</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">丰田</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">本田</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">别克</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">奔驰</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">福特</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">现代</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">宝马</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">奥迪</a></li>
+                    <li><a href="javaScript:void(0);" class="hoverColorGreen">吉利</a></li>
                 </ul>
                 <ul class="trademark">
                     <p>价格</p>
@@ -244,22 +244,33 @@
                         </a>
                     </div>
                 </div>
-                <div class="carListBox">
-                    
-                    
+
+                <div class="l_box">
+
+                    <div class="carListBox">
+
+
+                    </div>
+                    <div class="pageChange">
+                        <button value="1">1</button>
+                        <button value="2">2</button>
+                        <button value="3">3</button>
+                        <button value="4">4</button>
+                        <button value="5">5</button>
+                        <button value="6">6</button>
+                        <button value="7">7</button>
+                        <button value="8">8</button>
+                        <button value="9">9</button>
+                        <button value="10">10</button>
+                    </div>
                 </div>
-                <div class="pageChange">
-                    <button value="1">1</button>
-                    <button value="2">2</button>
-                    <button value="3">3</button>
-                    <button value="4">4</button>
-                    <button value="5">5</button>
-                    <button value="6">6</button>
-                    <button value="7">7</button>
-                    <button value="8">8</button>
-                    <button value="9">9</button>
-                    <button value="10">10</button>
+                <div class="l_box1" style="display: none;">
+                    <div class="carListBox">
+
+
+                    </div>
                 </div>
+
             </div>
         </div>
         <div class="footer">
@@ -460,92 +471,8 @@
             </div>
         </div>
     </div>
-    <button class="btn">提交</button>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
-
-<script>
-    let url = '/api/page';
-    let page = 10
-    // console.log($('.btn'))
-    // $('.btn').click(() => {
-    //     $.post(url, (res) => {
-    //         console.log((res))
-    //     })
-    // }
-    //
-    // )
-
-    class car {
-        constructor(data) {
-            this._id = data._id
-            this.char_type = data.char_type
-            this.img_src = data.img_src
-            this.year = data.year
-            this.mileage = data.mileage
-            this.now_price = data.now_price
-            this.pre_price = data.pre_price
-            this.init()
-        }
-        init() {
-            
-            let html = ''
-            html += `
-                <div class="carlists">
-                    <img src="${this.img_src}"
-                        alt="">
-                    <p>${this.char_type}</p>
-                    <p>${this.year}|${this.mileage}|到店服务</p>
-                    <p>${this.now_price}</p>
-                </div>
-            `
-            $('.carListBox').append(html)
-        }
-    }
-
-
-
-    var floats = document.querySelector('.floats');
-    // floats.appendChild();
-    window.addEventListener('scroll', function () {
-        // console.log(document.documentElement.scrollTop);
-        // console.log('滚动')
-        if (document.documentElement.scrollTop >= 500) {
-            floats.style.display = 'block';
-        } else {
-            floats.style.display = 'none';
-        }
-    });
-
-    $('.pageChange button').click(function(){
-
-        let page = this.value
-
-        $.post(url, {page:page}, (res) => {
-            $('.carListBox').html('')
-            $.each(res.data, (index, value) => {
-                new car(value)
-            })
-        })
-    })
-    
-
-    let search_url1 = '/api/search'
-    $('.selection input').on('keydown',function(e){
-
-        if(e.keyCode == 13){
-           let char_type = $('.selection input').val()
-           console.log(char_type);
-
-           $.get(search_url1,{char_type: char_type},(res)=>{
-               console.log(res);
-           })
-        }
-    })
-    
-    
-
-
-</script>
-
+<script src="./js/cookies.js"></script>
+<script src="./js/buy.js"></script>
 </html>

@@ -9,7 +9,8 @@ let bb = mongose.Schema({
     now_price: String, //现价
     pre_price: String, // 原价
     position: String, //位置
-    icon_new: String //新上市
+    icon_new: String, //新上市
+    number:Number  //电话号码
 
 })
 

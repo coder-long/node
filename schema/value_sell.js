@@ -1,6 +1,6 @@
 const mongose = require("mongoose")
 
-let aa = mongose.Schema({
+let Sell = mongose.Schema({
 
     char_type: String, //车类型
     img_src: String, //图片地址
@@ -14,4 +14,4 @@ let aa = mongose.Schema({
 
 })
 
-module.exports = aa
+module.exports = Sell

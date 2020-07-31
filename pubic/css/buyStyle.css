@@ -66,7 +66,7 @@
     width: 55px;
     height: 55px;
     /*background-color: greenyellow;*/
-    background-image: url("img/gr-logo.572ab9991d7a29aa936f4a793ebb9047.png");
+    background-image: url("../img/gr-logo.572ab9991d7a29aa936f4a793ebb9047.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -167,7 +167,7 @@
     height: 22px;
     outline: none;
     border: none;
-    font-size: 32px;
+    font-size: 16px;
 
 }
 .iconfont.icon-search{
@@ -239,14 +239,19 @@
     height: max-content;
 }
 .hoverColorGreen:hover{
-    color: #22ac38;
+    background-color: #22ac38;
+    color: white;
+    font-weight: 600;
+    border-radius: 2px;
+}
+.bacoGreen{
+    background-color: #22ac38;
+    color: white;
 }
 .hoverBoderGreen:hover{
     border: 1px solid #22ac38;
 }
-.hoverBoderGreen{
 
-}
 /*=================================汽车列表==============*/
 
 .carListBox{
