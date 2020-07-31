@@ -319,8 +319,7 @@ app.post('/api/sell',(req,res)=>{
     }
 
     Sell
-    .find(sell_find)
-    .then((data)=>{
+    .find(sell_find,(data)=>{
         console.log(data);
     })
     .insertMany(sell_find)
