@@ -2,9 +2,7 @@ var carbox = document.querySelector(".deal-list-wrapper");
 var more = document.querySelector(".deal-more")
 var url = '/api/SellAll'
 
-
-
-
+/* 点击更多汽车 */
 class car {
     constructor(data) {
         this.carli = document.createElement("li")
@@ -47,3 +45,24 @@ $('.deal-more').on('click', function () {
         }
     })
 })
+
+/*估价买车弹窗*/
+var sellcar =document.querySelector('.sellcar')
+var wrapper__close=document.querySelector(".wrapper__close")
+var heightprise=document.querySelector(".free-sell-btn")
+var submit=document.querySelector(".submit")
+var sellvalue=document.querySelector(".sellvalue")
+wrapper__close.onclick=function(){
+    sellvalue.value=''
+    sellcar.style.display='none'
+}
+heightprise.onclick=function(){
+    sellcar.style.display='block'
+}
+submit.onclick=function(){
+    sellvalue.value=''
+    sellcar.style.display='none'
+}
+
+
+
