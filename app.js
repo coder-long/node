@@ -141,6 +141,7 @@ app.get('/api/search', (req, res) => {
     let char_type = req.query.char_type //传的参数
     let big_price = req.query.big_price //条件查询 价格
     let li_price = req.query.li_price
+    let page = req.query.page
 
     let char_type1 = char_type.split(' ')
     if(char_type){
@@ -151,7 +152,8 @@ app.get('/api/search', (req, res) => {
         var name=eval("/" + xx +"/i"); 
         Vehicle
         .find({ char_type:name })
-        .limit(10)
+        .skip(page*40)
+        .limit(40)
         .then((data)=>{
             res.send({
                 code:0,
@@ -174,7 +176,7 @@ app.get('/api/search', (req, res) => {
 
 
 
-    if(big_price!='' || li_price){
+    if(big_price!='' || li_price!=''){
 
         Vehicle
         .find({})
