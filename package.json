@@ -22,9 +22,10 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
-    "formidable": "^1.2.2",
     "express-session": "^1.17.1",
+    "formidable": "^1.2.2",
     "mongoose": "^5.9.25"
   }
 }
