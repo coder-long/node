@@ -169,7 +169,7 @@ app.get('/api/search', (req, res) => {
             })
         })
             
-        
+        return
         
        
     }
