@@ -521,10 +521,13 @@
         $.post(url, {page:page}, (res) => {
             $('.carListBox').html('');
             $.each(res.data, (index, value) => {
+                console.log(value);
                 new car(value);
+
             })
         })
-    })
+
+    });
 
     let search_url1 = '/api/search'
     $('.selection input').on('keydown',function(e){
@@ -534,7 +537,14 @@
            console.log(char_type);
 
            $.get(search_url1,{char_type: char_type},(res)=>{
-               console.log(res);
+               console.log(res.data);
+               console.log('查询成功');
+               // new car(res);
+               // new car(res.data);
+               $.each(res.data, (index, value) => {
+                   console.log(value);
+                   new car(value);
+               })
            })
         }
     })
