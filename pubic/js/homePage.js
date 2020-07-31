@@ -50,7 +50,6 @@ $('.zhuce-btn').on('click', function() {
 })
 
 /* ------------------登录界面-------------------------- */
-// let url = '/api/login'
 $('.sub-btn').on('click', function() {
     let username = $('.dengluusername').val()
     let pwd = $('.zhucepwd').val()
