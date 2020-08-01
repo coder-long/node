@@ -7,6 +7,7 @@ const User = require("./module/user");
 const { Vehicle, Aa, Bb, Cc, Sell } = require("./module/vehicle");
 
 let db = require("./module/db");
+const { upload } = require("./utools/upload");
 let app = express();
 
 app.use(session({ //
@@ -345,10 +346,16 @@ app.post('/api/sell', (req, res) => {
     mileage: mileage
   }
 
+<<<<<<< HEAD
   Sell
     .find(sell_find)
     .then((data) => {
       console.log(data);
+=======
+    Sell
+    .find(sell_find,(data)=>{
+        console.log(data);
+>>>>>>> 9c36e1b1a3fd736072fa9947bbba1cee54a54927
     })
     .insertMany(sell_find)
     .then((data) => {
@@ -362,7 +369,12 @@ app.post('/api/sell', (req, res) => {
 })
 
 
+//图片上传
+app.post('/api/imglode',(req,res)=>{
 
+upload(req,res)
+
+})
 
 app.listen(8828, () => {
   console.log("服务已开启！");
