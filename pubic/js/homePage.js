@@ -16,6 +16,30 @@ $(".pop-close").on("click", function () {
   $(".username").val("");
   $(".pwd").val("");
 });
+/* -------------------------------------各频道入口--------------------------------------------- */
+
+/* var index_channel_new = document.querySelector(".index-channel-new");
+var lis = index_channel_new.querySelectorAll("li");
+var index_channel_carBox = document.querySelectorAll(".index-channel-carBox");
+for (var i = 0; i < lis.length; i++) {
+  lis[i].setAttribute('index', i);
+  lis[i].classList.add("active")
+  lis[i].onmouseover = function () {
+    for (var i = 0; i < lis.length; i++) {
+      lis[i].classList.remove("active")
+      
+    }
+    
+    var index = this.getAttribute('index');
+    console.log(index);
+    for (var i = 0; i < index_channel_carBox.length; i++) {
+      index_channel_carBox[i].style.display = 'none';
+    }
+    ndex_channel_carBox[index].style.display = 'block';
+  }
+
+} */
+
 
 /* -----------注冊界面--------------------------- */
 let url = "/api/res";
@@ -63,10 +87,12 @@ $(".sub-btn").on("click", function () {
         pwd,
       },
       success(data) {
+        console.log(data.session);
         if (data.code == 1) {
           alert("用户名或密码错误！");
         } else if (data.code == 0) {
           alert("登录成功");
+
           $(".pop-box").hide();
           let html = data.username;
           $(".uc-my").html(html);
@@ -80,6 +106,23 @@ $(".sub-btn").on("click", function () {
       },
     });
   }
+});
+
+/* --------------------------退出登录-------------------------------------------------- */
+
+$('.js-logout').on('click', function () {
+
+
+  let aa = $('.show').text();
+  console.log(aa);
+  if (aa == '登录') {
+    alert('请先输入密码')
+  } else {
+    req.session.username = '';
+    
+  }
+
+
 });
 
 /* -----------------------搜索----------------------------- */

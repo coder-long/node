@@ -494,3 +494,7 @@ body {
     line-height: 30px;
 }
 
+
+.infoTextarea.change::-webkit-input-placeholder {
+    color: red;
+ }

@@ -9,17 +9,17 @@ const { Vehicle, Aa, Bb, Cc,Sell} = require("./module/vehicle");
 let db = require("./module/db");
 let app = express();
 
-// app.use(session({ //
-//     secret:"gaongaoge",//生成唯一的令牌要加密 这个就是加密的密钥
-//     resave:false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
-//     rolling:true, //每次请求都重置 cookie的设置
-//     cookie:{
-//          maxAge:10000*1000*3600,
-//          secure:false, // 如果为true ，这个cookie的设置只能是 https
-//          sameSite:"lax", // 允许三方访问cookie否
-//          httpOnly:true //只能在http协议下 访问 cookie
-//     }
-// }))
+app.use(session({ //
+  secret: "gaongaoge",//生成唯一的令牌要加密 这个就是加密的密钥
+  resave: false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
+  rolling: true, //每次请求都重置 cookie的设置
+  cookie: {
+    maxAge: 10000 * 1000 * 3600,
+    secure: false, // 如果为true ，这个cookie的设置只能是 https
+    sameSite: "lax", // 允许三方访问cookie否
+    httpOnly: true //只能在http协议下 访问 cookie
+  }
+}))
 
 app.use(express.static(path.join(__dirname, "pubic")));
 app.use(express.static(path.join(__dirname, "uplodeImg")));
@@ -92,9 +92,10 @@ app.post("/api/res", (req, res) => {
 //登录
 app.post("/api/login", (req, res) => {
   let user = req.body;
-
-  User.findOne({ username: user.username, pwd: user.pwd }, (err, user) => {
+  User.findOne({ username: user.username }, (err, user) => {
     if (err) {
+
+
       res.json({
         code: 1,
         msg: "错误",
@@ -102,10 +103,14 @@ app.post("/api/login", (req, res) => {
       return;
     }
 
-    if (user) {
+    if (user.pwd == req.body.pwd) {
+      //登录过去就把用户的表示存在 session 里面
+      req.session.username = user.username;
+      req.session.pwd = user.pwd;
       res.json({
         code: 0,
         msg: "登录成功",
+        session: req.session,
         username: user.username,
         pwd: user.pwd,
       });
