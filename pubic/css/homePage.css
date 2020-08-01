@@ -71,6 +71,7 @@ var {
   border: 0;
   outline: 0;
   text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -814,3 +815,163 @@ textarea {
   color: #fff;
   text-decoration: none;
 }
+
+/* -----------------------------各频道入口---------------------------------------- */
+.index-channel-new-bg {
+  margin-top: 316px;
+  background: #fff;
+}
+.index-channel-new {
+  width: 1200px;
+  height: 225px;
+  position: absolute;
+  top: 554px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.active-green .index-channel-new .index-channel-1,
+.active-green .index-channel-new .index-channel-1.active {
+  background: url(../img/homePageimg/ershou.5b609a564a8686c63a02793d97cbc552.jpg);
+  background-size: 100% 100%;
+  animation: bounce 0.3s ease;
+}
+.index-channel-new li {
+  width: 300px;
+  height: 225px;
+  float: left;
+  position: relative;
+}
+.index-channel-new .index-channel-2 {
+  background: url(../img/homePageimg/yanxuan2.5ad2f9dcd798ee4f9b9469875327a0a2.png);
+  background-size: 100% 100%;
+}
+.index-channel-new .index-channel-3 {
+  background: url(../img/homePageimg/maiche2.8741e6b8d150855cd0914bc5bbd40232.jpg);
+  background-size: 100% 100%;
+}
+.index-channel-new .index-channel-4 {
+  background: url(../img/homePageimg/jinrong2.cbeaf4a85c95d8b9fb2b05fa526e0c4f.png);
+  background-size: 100% 100%;
+}
+.active-green li:first-child .icon,
+.active .icon {
+  display: inline-block;
+}
+.index-channel-new .index-channel-1 .icon {
+  background-image: url(../img/homePageimg/icon-green.8a53822f90031dd1735dc21761dee88e.png);
+}
+.index-channel-new .index-channel-2 .icon {
+  background-image: url(../img/homePageimg/icon-orange.51903464d913d05af169037192a9a7a3.png);
+}
+.index-channel-new .index-channel-3 .icon {
+  background-image: url(../img/homePageimg/icon-red.ecb6a2ab68f94c146d18af307dde200c.png);
+}
+.index-channel-new .index-channel-4 .icon {
+  background-image: url(../img/homePageimg/icon-turquise.c19efab2e6c9a00303867b4dbcd5f607.png);
+}
+.index-channel-new .icon {
+  display: none;
+  width: 20.5px;
+  height: 10.5px;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  bottom: -10.5px;
+  margin-left: -10px;
+}
+.index-channel-car {
+  overflow: hidden;
+  width: 1200px;
+  margin: 0 auto;
+}
+.index-channel-car .active {
+  display: block;
+}
+.index-channel-carBox-next,
+.index-channel-carBox-prev {
+  width: 31px;
+  float: left;
+  height: 178.5px;
+  padding-top: 172.5px;
+}
+.index-channel-carBox-prev i {
+  width: 28px;
+  height: 28px;
+  background: url(../img/homePageimg/prev.d0f4cd4d1c8e5405a36d0a535bd98b3d.png)
+    no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  margin-top: 21px;
+  cursor: pointer;
+}
+.index-channel-carBox {
+  width: 1138px;
+  height: 178.5px;
+  margin: 0 auto;
+  padding-top: 172.5px;
+  overflow: hidden;
+  float: left;
+  display: none;
+}
+.index-channel-carBox .index-channel-carList {
+  height: 100%;
+  display: -webkit-box;
+  transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  position: relative;
+  left: 0;
+}
+.index-channel-carBox .index-channel-carItem {
+  width: 160px;
+  height: 100%;
+  margin-right: 36px;
+}
+.index-channel-carBox .channel-carImg {
+  width: 100%;
+  height: 70px;
+  display: block;
+}
+.index-channel-carBox .channel-carName {
+  width: 100%;
+  font-size: 14px;
+  color: #181818;
+  margin-top: 18px;
+  line-height: 14px;
+  text-align: center;
+}
+.active-green .index-channel-carBox .channel-carPrice {
+  color: #3cb46d;
+}
+.index-channel-carBox .channel-carPrice {
+  font-size: 14px;
+  color: #fa5428;
+  line-height: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+.index-channel-carBox-next {
+  float: right;
+}
+.index-channel-carBox-next,
+.index-channel-carBox-prev {
+  width: 31px;
+  float: left;
+  height: 178.5px;
+  padding-top: 172.5px;
+}
+.index-channel-carBox-next i {
+  width: 28px;
+  height: 28px;
+  background: url(../img/homePageimg/next.27a6c51c792c94d1ef5831dc116c5cc0.png)
+    no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 27px;
+  float: right;
+  cursor: pointer;
+}
+/* 热卖车型 */
