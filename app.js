@@ -4,7 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const User = require("./module/user");
-const { Vehicle, Aa, Bb, Cc } = require("./module/vehicle");
+const { Vehicle, Aa, Bb, Cc,Sell} = require("./module/vehicle");
 
 let db = require("./module/db");
 let app = express();
@@ -240,7 +240,6 @@ app.post("/api/modify", (req, res) => {
     });
 });
 
-// Vehicle.find({char_type:'本田22222'}).then(res=>console.log(res))
 
 // 添加接口
 app.post("/api/add", (req, res) => {
@@ -305,6 +304,43 @@ app.get("/api/jiangjia", (req, res) => {
     });
   });
 });
+
+//卖出
+app.post('/api/sell',(req,res)=>{
+
+    let char_type = req.body.char_type
+    let year = req.body.year
+    let number = req.body.number
+    let now_price = req.body.now_price
+    let pre_price = req.body.pre_price
+    let mileage = req.body.mileage
+    let sell_find = {
+        char_type:char_type,
+        year:year,
+        number:number,
+        now_price:now_price,
+        pre_price:pre_price,
+        mileage:mileage
+    }
+
+    Sell
+    .find(sell_find)
+    .then((data)=>{
+        console.log(data);
+    })
+    .insertMany(sell_find)
+    .then((data)=>{
+        res.send({
+            code:0,
+            msg:"成功！",
+            data:data
+        })
+    })
+
+})
+
+
+
 
 app.listen(8828, () => {
   console.log("服务已开启！");
