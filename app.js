@@ -80,58 +80,11 @@ app.post("/api/res", (req, res) => {
             msg: "失败",
           });
         }
-<<<<<<< HEAD
-
-    })
-
-
-})
-
-
-//查询接口
-app.get('/api/search', (req, res) => {
-
-    let char_type = req.query.char_type //传的参数
-    let big_price = req.query.big_price //条件查询 价格
-    let li_price = req.query.li_price
-    let page = req.query.page
-
-    let char_type1 = char_type.split(' ')
-    if(char_type){
-        let xx = ''
-        for(let i = 0;i<char_type1.length;i++){
-            xx += `${char_type1[i]}.*`
-        }
-        var name=eval("/" + xx +"/i"); 
-        Vehicle
-        .find({ char_type:name })
-        .skip(page*40)
-        .limit(40)
-        .then((data)=>{
-            res.send({
-                code:0,
-                msg:'成功！',
-                data:data
-            })
-        })
-        .catch((err)=>{
-            res.json({
-                code:1,
-                msg:'失败哦'
-                
-            })
-        })
-            
-        return
-        
-       
-=======
         res.send({
           code: 0,
           msg: "成功",
         });
       });
->>>>>>> 3de31e3c401f7a7a4d7bf8c8cdec1a532d9e9671
     }
   });
 });
@@ -185,7 +138,7 @@ app.get("/api/search", (req, res) => {
       .then((data) => {
         res.send({
           code: 0,
-          msg: "成功！",
+          msg: "成功！", 
           data: data,
         });
       })

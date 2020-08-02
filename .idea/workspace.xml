@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="783740d1-0e4c-49f1-bdc1-aca2903168a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubic/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/pubic/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubic/js/buy.js" beforeDir="false" afterPath="$PROJECT_DIR$/pubic/js/buy.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pubic/buy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="478" column="7" selection-start-line="478" selection-start-column="7" selection-end-line="478" selection-end-column="7" />
+            <state relative-caret-position="296">
+              <caret line="464" column="22" lean-forward="true" selection-start-line="464" selection-start-column="22" selection-end-line="464" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#4;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -59,8 +62,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-10" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1762" />
+    <option name="y" value="174" />
     <option name="width" value="1935" />
     <option name="height" value="1090" />
   </component>
@@ -97,7 +101,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/test001" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -125,15 +129,16 @@
       <updated>1596157465839</updated>
       <workItem from="1596157467004" duration="2398000" />
       <workItem from="1596175544160" duration="249000" />
-      <workItem from="1596176038077" duration="860000" />
+      <workItem from="1596176038077" duration="1493000" />
+      <workItem from="1596184250991" duration="36000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3507000" />
+    <option name="totallyTimeSpent" value="4176000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="1913" y="200" width="1550" height="878" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.115587845" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -149,7 +154,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34852546" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.34852546" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -161,8 +166,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pubic/buy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="478" column="7" selection-start-line="478" selection-start-column="7" selection-end-line="478" selection-end-column="7" />
+        <state relative-caret-position="296">
+          <caret line="464" column="22" lean-forward="true" selection-start-line="464" selection-start-column="22" selection-end-line="464" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#4;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
