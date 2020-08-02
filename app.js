@@ -4,7 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const User = require("./module/user");
-const { Vehicle, Aa, Bb, Cc,Sell} = require("./module/vehicle");
+const { Vehicle, Aa, Bb, Cc, Sell } = require("./module/vehicle");
 
 let db = require("./module/db");
 const { upload } = require("./utools/upload");
@@ -61,13 +61,13 @@ app.post("/api/res", (req, res) => {
   User.find({ username: req.body.username }).then((data) => {
     // console.log(data);
     if (data != "") {
-      console.log(1);
+
       res.send({
         code: 1,
         msg: "用户名存在,请重新注册！",
       });
     } else {
-      console.log(2);
+
 
       let user = new User({
         username: req.body.username,
@@ -95,8 +95,6 @@ app.post("/api/login", (req, res) => {
   let user = req.body;
   User.findOne({ username: user.username }, (err, user) => {
     if (err) {
-
-
       res.json({
         code: 1,
         msg: "错误",
@@ -104,25 +102,49 @@ app.post("/api/login", (req, res) => {
       return;
     }
 
-    if (user.pwd == req.body.pwd) {
-      //登录过去就把用户的表示存在 session 里面
-      req.session.username = user.username;
-      req.session.pwd = user.pwd;
-      res.json({
-        code: 0,
-        msg: "登录成功",
-        session: req.session,
-        username: user.username,
-        pwd: user.pwd,
-      });
+    if (user) {
+      if (user.pwd == req.body.pwd) {
+        //登录过去就把用户的表示存在 session 里面
+
+        req.session.username = user.username;
+        req.session.pwd = user.pwd;
+        res.json({
+          code: 0,
+          msg: "登录成功",
+          // session: req.session,
+          username: user.username,
+          pwd: user.pwd,
+        });
+      } else {
+        res.send({
+          code: 1,
+          msg: "用户名或密码错误！",
+        });
+      }
     } else {
       res.send({
-        code: 1,
-        msg: "用户名或密码错误！",
-      });
+        code: 3,
+        msg: "用户不存在"
+      })
     }
   });
 });
+
+//  退出账号
+
+app.post("/api/tuichu", (req, res) => {
+  req.session.username = null
+  req.session.pwd = null
+  res.send({
+    code: 0,
+    msg: "注销成功"
+  })
+})
+
+
+
+
+
 
 //查询接口
 app.get("/api/search", (req, res) => {
@@ -348,34 +370,41 @@ app.post('/api/addcollect', (req, res) => {
 
 
 //卖出
-app.post('/api/sell',(req,res)=>{
+app.post('/api/sell', (req, res) => {
 
-    let char_type = req.body.char_type
-    let year = req.body.year
-    let number = req.body.number
-    let now_price = req.body.now_price
-    let pre_price = req.body.pre_price
-    let mileage = req.body.mileage
-    let sell_find = {
-        char_type:char_type,
-        year:year,
-        number:number,
-        now_price:now_price,
-        pre_price:pre_price,
-        mileage:mileage
-    }
+  let char_type = req.body.char_type
+  let year = req.body.year
+  let number = req.body.number
+  let now_price = req.body.now_price
+  let pre_price = req.body.pre_price
+  let mileage = req.body.mileage
+  let sell_find = {
+    char_type: char_type,
+    year: year,
+    number: number,
+    now_price: now_price,
+    pre_price: pre_price,
+    mileage: mileage
+  }
 
+<<<<<<< HEAD
+  Sell
+    .find(sell_find)
+    .then((data) => {
+      console.log(data);
+=======
     Sell
     .find(sell_find,(data)=>{
         console.log(data);
+>>>>>>> 9c36e1b1a3fd736072fa9947bbba1cee54a54927
     })
     .insertMany(sell_find)
-    .then((data)=>{
-        res.send({
-            code:0,
-            msg:"成功！",
-            data:data
-        })
+    .then((data) => {
+      res.send({
+        code: 0,
+        msg: "成功！",
+        data: data
+      })
     })
 
 })

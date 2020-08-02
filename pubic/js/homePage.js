@@ -87,9 +87,9 @@ $(".sub-btn").on("click", function () {
         pwd,
       },
       success(data) {
-        console.log(data.session);
-        if (data.code == 1) {
-          alert("用户名或密码错误！");
+        console.log(data);
+        if (data.code == 1 || data.code == 3) {
+          alert("用户名或密码错误或此用户不存在！");
         } else if (data.code == 0) {
           alert("登录成功");
 
@@ -111,18 +111,24 @@ $(".sub-btn").on("click", function () {
 /* --------------------------退出登录-------------------------------------------------- */
 
 $('.js-logout').on('click', function () {
-
-
   let aa = $('.show').text();
-  console.log(aa);
+  // console.log(aa);
   if (aa == '登录') {
-    alert('请先输入密码')
+    alert('请登入账号')
   } else {
-    req.session.username = '';
-    
+    $.ajax({
+      type: "post",
+      url: "/api/tuichu",
+      success(data) {
+        console.log(data);
+        if (data.code == 0) {
+          alert('账号退出成功')
+          let aa = '登录';
+          $('.uc-my').html(aa);
+        }
+      }
+    })
   }
-
-
 });
 
 /* -----------------------搜索----------------------------- */
@@ -133,7 +139,10 @@ $(".search-btn").on("click", function () {
     if (data.code == 1 || data.data == 0) {
       alert("查询无果，请确定你查的是个车哦");
     } else if (data.code == 0) {
+      // search_input = $('search-input').val();
       window.location.href = "buy.html";
+      localStorage['information'] = char_type;
+      console.log(char_type);
     }
   });
 });
