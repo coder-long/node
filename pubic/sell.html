@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/sell.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.guazi.com/favicon.ico" media="screen">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://www.guazi.com/favicon.ico"
+      media="screen"
+    />
     <title>【 成都二手车估价】成都个人急卖二手车-瓜子二手车</title>
   </head>
   <body>
@@ -41,20 +46,66 @@
       <div class="slogan-1">瓜子二手车&nbsp;&nbsp;二手车行业领军者</div>
       <div class="phone-area">
         <input
-          class="phone-input js-phone-input"
+          class="phone-input js-phone-input phone_number"
           placeholder="请输入手机号码，6870万车主已提交"
         />
+        <div class="sellcar">
+          <div class="wrapper__header">
+            瓜子预约卖车，多卖20%，平均7天成交。
+            <i class="wrapper__close"></i>
+          </div>
+          <table class="sellcarTable">
+            <tr>
+              <td></td>
+              <td>请输入品牌车系</td>
+              <td></td>
+              <td></td>
+              <td>请填写爱车车况</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>品牌</td>
+              <td><input  class="sellvalue brand" type="text" placeholder="请输入品牌" /></td>
+              <td></td>
+              <td>里程</td>
+              <td>
+                <input class="sellvalue mileage" type="text" placeholder="公里数" style="width: 60px;"/>万公里
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>车系</td>
+              <td><input  class="sellvalue car_system" type="text" placeholder="请输入车系" /></td>
+              <td></td>
+              <td>上牌时间</td>
+              <td>
+                <input class="sellvalue year"
+                  type="text" placeholder="请输入年" style="width: 60px;" />年
+              </td>
+
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <td>车型</td>
+              <td><input class="sellvalue car_model" type="text" placeholder="请输入车型" /></td>
+              <td></td>
+              <td></td>
+              <td>
+                <button
+                  class="submit" style="width: 60px; height: 30px; font-size: 15px;" >
+                  提交
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
         <button
-          class="phone-btn-1 free-sell-btn"
-          data-clue-entry="05"
-          data-gzlog="901545643247"
-        >
+          class="phone-btn-1 free-sell-btn num_btn" data-clue-entry="05" data-gzlog="901545643247">
           高价卖车
         </button>
         <button
-          class="phone-btn-2 quick-evaluate"
-          data-gzlog="0220050000000115"
-        >
+          class="phone-btn-2 quick-evaluate" data-gzlog="0220050000000115">
           快速估价
         </button>
         <p class="js-phone-error"></p>
@@ -94,13 +145,14 @@
           <p class="inc-ser-desc">专人帮你卖车<br />省时省力</p>
         </li>
       </ul>
-      <a href="" class="inc-ser-detail-link"> 查看详情介绍<i></i> </a>
+      <a href="https://www.guazi.com/cd/sellAssureIntro" class="inc-ser-detail-link"> 查看详情介绍<i></i> </a>
     </div>
     <div class="recent-deal">
       <div class="con-tit">
         <p>最新成交</p>
         <i></i>
-      </div>; 
+      </div>
+    
       <ul class="deal-list clearfix">
         <div class="deal-list-wrapper clearfix" style="left: -12760px;">
           <li>
@@ -135,10 +187,9 @@
             <p class="deal-p2">2012年 | 8.0万公里 | 南京</p>
             <p class="deal-p3">成交价<em>4.18万</em></p>
           </li>
-          
         </div>
       </ul>
-      <a class="deal-more"  href="javascript:void(0)">查看更多成交车源</a>
+      <a class="deal-more" href="javascript:void(0)">查看更多成交车源</a>
     </div>
     <div class="guazi-qa">
       <div class="qa-box">
@@ -170,6 +221,6 @@
       </div>
     </div>
   </body>
-  <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.js'></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
   <script src="./js/sell.js"></script>
 </html>

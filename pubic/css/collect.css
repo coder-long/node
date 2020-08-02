@@ -540,3 +540,12 @@
     color: #666;
     font-size: 12px;
 }
+
+
+
+.user-img {
+    width: 60px;
+    height: 60px;
+    margin: 30px auto 10px;
+    background: url(https://cli-sta.guazistatic.com/c2c_web/user-photo.914efa15f58c3434e88780e176608e3c.png) no-repeat;
+}
