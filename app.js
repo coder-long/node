@@ -387,16 +387,9 @@ app.post('/api/sell', (req, res) => {
     mileage: mileage
   }
 
-<<<<<<< HEAD
-  Sell
-    .find(sell_find)
-    .then((data) => {
-      console.log(data);
-=======
     Sell
     .find(sell_find,(data)=>{
         console.log(data);
->>>>>>> 9c36e1b1a3fd736072fa9947bbba1cee54a54927
     })
     .insertMany(sell_find)
     .then((data) => {

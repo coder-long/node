@@ -178,7 +178,7 @@ liulan.onclick = function() {
             if (data.data.length == 0) { //判断收藏表有无数据
                 midd.style.height = '680px';
                 car_3.style.height = '620px';
-                car_3.innerHTML = '<div class="zan">暂无收藏车辆</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
+                car_3.innerHTML = '<div class="zan">暂无浏览记录</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
             } else {
                 // console.log(data);
                 midd.style.height = data.data.length * 220 + 'px';
@@ -223,7 +223,7 @@ $.ajax({
         if (data.data.length == 0) { //判断收藏表有无数据
             midd.style.height = '680px';
             car_3.style.height = '620px';
-            car_3.innerHTML = '<div class="zan">暂无收藏车辆</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
+            car_3.innerHTML = '<div class="zan">暂无浏览记录</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
         } else {
             console.log(data);
             midd.style.height = data.data.length * 220 + 'px';
