@@ -108,6 +108,12 @@ xin.prototype.delete = function() {
         btnPrimary.onclick = () => {
 
             console.log(this.data);
+            $.post('/api/delcc', { _id: this.data._id }, function(data) {
+
+                console.log(data);
+
+            })
+
             boxs.classList.add('hidd');
             mask.classList.add('hidd')
 
@@ -126,6 +132,14 @@ xin.prototype.delete = function() {
             if (this.aa % 2 == 0) {
 
                 this.shou.style.backgroundPosition = '-35px -200px'
+                let a = this.data
+
+                $.post('/api/addcollect', a, function(data) {
+
+                    console.log(data);
+
+                })
+
 
             } else {
 
@@ -136,11 +150,10 @@ xin.prototype.delete = function() {
 
         }
 
-
     }
 
-
 }
+
 
 
 
@@ -162,13 +175,13 @@ liulan.onclick = function() {
         url: '/api/history',
         // data: data,
         success(data) {
-            if (data.length == 0) { //判断收藏表有无数据
+            if (data.data.length == 0) { //判断收藏表有无数据
                 midd.style.height = '680px';
                 car_3.style.height = '620px';
                 car_3.innerHTML = '<div class="zan">暂无收藏车辆</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
             } else {
                 // console.log(data);
-                midd.style.height = data.data.length * 190 + 'px';
+                midd.style.height = data.data.length * 220 + 'px';
                 car_3.innerHTML = '';
 
                 var data = data.data;
@@ -207,13 +220,13 @@ $.ajax({
     url: '/api/history',
     // data: data,
     success(data) {
-        if (data.length == 0) { //判断收藏表有无数据
+        if (data.data.length == 0) { //判断收藏表有无数据
             midd.style.height = '680px';
             car_3.style.height = '620px';
             car_3.innerHTML = '<div class="zan">暂无收藏车辆</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
         } else {
             console.log(data);
-            midd.style.height = data.data.length * 190 + 'px';
+            midd.style.height = data.data.length * 220 + 'px';
             var data = data.data;
             let dom = document.createElement('div');
             dom.classList.add('all');

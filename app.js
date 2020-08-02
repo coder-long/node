@@ -306,6 +306,47 @@ app.get("/api/jiangjia", (req, res) => {
   });
 });
 
+
+//添加收藏
+app.post('/api/addcollect', (req, res) => {
+  // console.log(req.body);
+  let a = {
+      char_type: req.body.char_type, //车类型
+      img_src: req.body.img_src, //图片地址
+      year: req.body.year, // 年份
+      mileage: req.body.mileage, //里程
+      now_price: req.body.now_price, //现价
+      pre_price: req.body.pre_price, // 原价
+      position: req.body.position, //位置
+      icon_new: req.body.icon_new //新上市
+  }
+
+  Aa.insertMany(a, (err, data) => {
+
+      if (err) {
+          res.json({
+              code: 1,
+              msg: '添加失败'
+          })
+
+          return
+      }
+
+      res.json({
+          code: 0,
+          msg: '添加成功！',
+          data: data
+      })
+
+  })
+
+
+})
+
+
+
+
+
 //卖出
 app.post('/api/sell',(req,res)=>{
 
