@@ -15,7 +15,7 @@ app.use(session({ //
   resave: false,//中间如果session数据被修改，不能重新设置到前端的cookie里面
   rolling: true, //每次请求都重置 cookie的设置
   cookie: {
-    maxAge: 10000 * 1000 * 3600,
+    maxAge: 1000*10,
     secure: false, // 如果为true ，这个cookie的设置只能是 https
     sameSite: "lax", // 允许三方访问cookie否
     httpOnly: true //只能在http协议下 访问 cookie
@@ -447,10 +447,7 @@ app.post('/api/sell', (req, res) => {
     mileage: mileage
   }
 
-    Sell
-    .find(sell_find,(data)=>{
-        console.log(data);
-    })
+    Vehicle
     .insertMany(sell_find)
     .then((data) => {
       res.send({
