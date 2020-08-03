@@ -365,7 +365,67 @@ app.post('/api/addcollect', (req, res) => {
 
 })
 
+//添加浏览
+app.post('/api/addll', (req, res) => {
+  // console.log(req.body);
+  let a = {
+      char_type: req.body.char_type, //车类型
+      img_src: req.body.img_src, //图片地址
+      year: req.body.year, // 年份
+      mileage: req.body.mileage, //里程
+      now_price: req.body.now_price, //现价
+      pre_price: req.body.pre_price, // 原价
+      position: req.body.position, //位置
+      icon_new: req.body.icon_new //新上市
+  }
 
+  Bb.insertMany(a, (err, data) => {
+
+      if (err) {
+          res.json({
+              code: 1,
+              msg: '添加失败'
+          })
+
+          return
+      }
+
+      res.json({
+          code: 0,
+          msg: '添加成功！',
+          data: data
+      })
+
+  })
+
+
+})
+
+
+app.post('/api/delcc', (req, res) => {
+
+  Bb.deleteOne({ _id: req.body._id }, (err, data) => {
+      console.log(req.body._id);
+
+      if (err) {
+          res.json({
+              code: 1,
+              msg: '删除失败'
+          })
+
+          return
+      }
+
+      res.json({
+          code: 0,
+          msg: '删除成功！',
+          data: data
+      })
+
+  })
+
+
+})
 
 
 

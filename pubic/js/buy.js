@@ -1,7 +1,6 @@
 // const cookieParser = require("cookie-parser");
 
 let url = '/api/page';
-<<<<<<< HEAD
     let page = 10
 var carList = document.querySelector('.carListBox');
 var boxArr = new Array;
@@ -45,6 +44,8 @@ var num = 0;
 
 
             this.box.onclick = () => {
+
+                
                 let data = {
                     datas : this.data,
                     // type: this.p1.innerHTML,
@@ -52,11 +53,24 @@ var num = 0;
                     // pic: this.img.src,
                     // price: this.p3.innerHTML
                 }
-                console.log(JSON.stringify(data));
+                let a = {
+                    char_type: data.datas.char_type, //车类型
+                    img_src: data.datas.img_src, //图片地址
+                    year: data.datas.year, // 年份
+                    mileage: data.datas.mileage, //里程
+                    now_price: data.datas.now_price, //现价
+                    pre_price: data.datas.pre_price, // 原价
+                    position: data.datas.position, //位置
+                    icon_new: data.datas.icon_new //新上市
+                }
+                $.post('/api/addll',a,(res)=>{
+                    console.log(res);
+                })
+                // console.log(data.datas);
                 window.location.href = `./buyInfo.html?data=${JSON.stringify(data)}`;
                 cookie.setCookie('carMsg',JSON.stringify(data));
                 
-                console.log(data);
+                // console.log(data);
             }
             // $(this.box).on('click','.carlists',function(){
             //     console.log($(this))
@@ -88,68 +102,8 @@ var num = 0;
     for(var item of boxArr){
         console.log(item)
         
-=======
-let page = 10
-
-class car {
-    constructor(data) {
-        this.data = data;
-        this._id = data._id
-        this.char_type = data.char_type
-        this.img_src = data.img_src
-        this.year = data.year
-        this.mileage = data.mileage
-        this.now_price = data.now_price
-        this.pre_price = data.pre_price
-        this.init()
-        this.click();
-
-    }
-    init() {
-        let html = ''
-        html += `
-                <div class="carlists" data=${JSON.stringify(this.data)}>
-                    <img src="${this.img_src}"
-                        alt="">
-                    <p>${this.char_type}</p>
-                    <p>${this.year}|${this.mileage}|到店服务</p>
-                    <p>${this.now_price}</p>
-                      </div>
-            `
-        $('.carListBox').append(html);
     }
 
-    click() {
-
-        let data = this.data
-        $('.l_box').on('click', '.carlists', function () {
-            cookie.setCookie('data', JSON.stringify(data), 1)
-            window.location.href = './buyInfo.html'
-
-            $('.carlists').val()
-            console.log($('.carlists').attr('data'));
-
-        })
->>>>>>> 35197fd6d32b95be2b9a86c31b5f36e72fcaa9af
-    }
-}
-
-$('.selection_ipt').val(localStorage['information'])
-
-var floats = document.querySelector('.floats');
-// floats.appendChild();
-window.addEventListener('scroll', function () {
-    // console.log(document.documentElement.scrollTop);
-    // console.log('滚动')
-    if (document.documentElement.scrollTop >= 500) {
-        floats.style.display = 'block';
-    } else {
-        floats.style.display = 'none';
-    }
-});
-
-
-<<<<<<< HEAD
     
     var floats = document.querySelector('.floats');
     // floats.appendChild();
@@ -162,49 +116,20 @@ window.addEventListener('scroll', function () {
             floats.style.display = 'none';
         }
     });
-=======
-$.post(url, { page: 1 }, (res) => {
-    $('.carListBox').html('');
-    $.each(res.data, (index, value) => {
-        new car(value);
-    })
-})
 
-$('.pageChange button').on('click', function () {
->>>>>>> 35197fd6d32b95be2b9a86c31b5f36e72fcaa9af
 
-    let page = this.value;
-
-    $.post(url, { page: page }, (res) => {
+    $.post(url, { page: 1 }, (res) => {
         $('.carListBox').html('');
         $.each(res.data, (index, value) => {
             new car(value);
         })
     })
-})
 
-<<<<<<< HEAD
     $('.pageChange button').on('click', function () {
         console.log(this);
         let page = this.value;
 
         $.post(url, { page: page }, (res) => {
-=======
-let search_url1 = '/api/search'
-$('.selection input').on('keydown', function (e) {
-
-    if (e.keyCode == 13) {
-        $('.l_box').css({
-            'display': 'none'
-        })
-        $('.l_box1').css({
-            'display': 'block'
-        })
-        let char_type = $('.selection input').val();
-        console.log(char_type);
-        $.get(search_url1, { char_type: char_type }, (res) => {
-            console.log(res);
->>>>>>> 35197fd6d32b95be2b9a86c31b5f36e72fcaa9af
             $('.carListBox').html('');
             $.each(res.data, (index, value) => {
                 new car(value);
@@ -219,7 +144,6 @@ $('.selection input').on('keydown', function (e) {
                 
 
         })
-<<<<<<< HEAD
     })
 
     // console.log(boxArr[1].box);
@@ -244,14 +168,10 @@ $('.selection input').on('keydown', function (e) {
                 })
             })
         }
-=======
-    }
->>>>>>> 35197fd6d32b95be2b9a86c31b5f36e72fcaa9af
 
 
-})
+    })
 
-<<<<<<< HEAD
     //筛选字段
     var char_type = '';
 
@@ -266,34 +186,9 @@ $('.selection input').on('keydown', function (e) {
             i.style.color = 'black';
             i.style.fontWeight = 500;
         }
-=======
-var tradmarkesSon1 = document.querySelectorAll('.trademark:nth-of-type(1)>li a');
-var tradmarkesSon2 = document.querySelectorAll('.trademark:nth-of-type(2)>li a');
-var tradmarkesSon3 = document.querySelectorAll('.trademark:nth-of-type(3)>li a');
-
-//默认样式
-tradmarkesSon1[0].style.backgroundColor = '#22ac38';
-tradmarkesSon1[0].style.fontWeight = 900;
-tradmarkesSon1[0].style.color = 'white';
-
-
-console.log(tradmarkesSon1);
-$('.trademark li a').click(function () {
-    // if(tradmarkesSon1.include(this)){
-    for (var item of tradmarkesSon1) {
-        item.style.backgroundColor = 'white';
-        item.style.fontWeight = 500;
-        item.style.color = 'black';
-        // }    
-    }
-
-    let char_type = $(this).html();
-    // console.log(this);
->>>>>>> 35197fd6d32b95be2b9a86c31b5f36e72fcaa9af
 
         char_type += $(this).html()+" ";
 
-<<<<<<< HEAD
         this.classList.add('bacoGreen');
         this.style.backgroundColor = ' #22ac38';
         this.style.color = 'white';
@@ -322,13 +217,6 @@ $('.trademark li a').click(function () {
             i.style.color = 'black';
             i.style.fontWeight = 500;
         }
-=======
-
-    // this.classList.add('bacoGreen');
-    this.style.backgroundColor = ' #22ac38';
-    this.style.color = 'white';
-    this.style.fontWeight = 900;
->>>>>>> 35197fd6d32b95be2b9a86c31b5f36e72fcaa9af
 
         char_type += $(this).html()+" ";
 
@@ -337,25 +225,21 @@ $('.trademark li a').click(function () {
         this.style.color = 'white';
         this.style.fontWeight = 900;
 
+        $('.l_box').css({
+            'display': 'none'
+        })
+        $('.l_box1').css({
+            'display': 'block'
+        })
 
-    $('.l_box').css({
-        'display': 'none'
-    })
-    $('.l_box1').css({
-        'display': 'block'
-    })
-
-    $.get(search_url1, { char_type: char_type }, (res) => {
-        console.log(res);
-        $('.carListBox').html('');
-        $.each(res.data, (index, value) => {
-            new car(value);
+        $.get(search_url1, { char_type: char_type }, (res) => {
+            console.log(res);
+            $('.carListBox').html('');
+            $.each(res.data, (index, value) => {
+                new car(value);
+            })
         })
     })
-<<<<<<< HEAD
     
 
 
-=======
-})
->>>>>>> 35197fd6d32b95be2b9a86c31b5f36e72fcaa9af

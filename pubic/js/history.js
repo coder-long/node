@@ -111,6 +111,7 @@ xin.prototype.delete = function() {
             $.post('/api/delcc', { _id: this.data._id }, function(data) {
 
                 console.log(data);
+                window.location.reload()
 
             })
 
