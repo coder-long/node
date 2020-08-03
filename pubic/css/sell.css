@@ -498,3 +498,168 @@ body {
 .infoTextarea.change::-webkit-input-placeholder {
     color: red;
  }
+
+ /**
+ * 尾部
+ */
+ .footer {
+    padding: 50px 0 30px;
+    background: #2a2c37;
+    min-width: 1200px;
+}
+.company-info {
+    width: 1190px;
+    height: 90px;
+    margin: 0 auto;
+    color: #b8b8b8;
+    padding-bottom: 70px;
+    position: relative;
+}
+.company-info .instructions-guazi-name {
+    width: 1190px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.company-info .footer-logo {
+    width: 102px;
+    height: 102px;
+    float: left;
+    margin-left: 40px;
+    _margin-left: 20px;
+    background-repeat: no-repeat;
+    background-image: url(https://image.guazistatic.com/gz01190923/15/39/f3eebb2….png);
+    background-size: 100% 100%;
+}
+.company-info .phone-email {
+    float: left;
+    width: 378px;
+    padding-left: 30px;
+}
+.company-info .phone-email p {
+    line-height: 22px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.company-info .phone-email p i {
+    padding-right: 18px;
+}
+.company-info .phone-email p span {
+    display: inline-block;
+    font-size: 12px;
+}
+.company-info .gz-ewm {
+    display: block;
+    float: left;
+    width: 85px;
+    height: 85px;
+    margin-top: 4px;
+}
+.company-info .ewm-tit {
+    width: 82px;
+    line-height: 28px;
+    font-size: 14px;
+    float: left;
+}
+.company-info .gz-ewm {
+    display: block;
+    float: left;
+    width: 85px;
+    height: 85px;
+    margin-top: 4px;
+}
+.company-info .basic-info {
+    float: left;
+    width: 390px;
+    padding-left: 20px;
+    background: transparent;
+    margin: 0;
+}
+.company-info .ewm-tit-tip {
+    width: 80px;
+    height: 16px;
+    background: #22AC38;
+    font-family: PingFangSC-Regular;
+    font-size: 10px;
+    color: #FFFFFF;
+    display: inline-block;
+    line-height: 16px;
+}
+.company-info .basic-info .info-link {
+    line-height: 22px;
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+.company-info .basic-info .info-link a {
+    color: #b8b8b8;
+    margin-right: 5px;
+}
+.company-info .basic-info .arc-info {
+    line-height: 20px;
+    font-family: simhei;
+}
+.company-info .basic-info .arc-info {
+    line-height: 20px;
+    font-family: simhei;
+}
+element.style {
+    color: #939393;
+}
+.company-info .basic-info .protect {
+    padding-top: 3px;
+    height: 28px;
+    line-height: 28px;
+}
+.friendly-link {
+    width: 1100px;
+    padding: 0 0 0 90px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.friendly-link .link-tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 90px;
+    height: 28px;
+    font-size: 16px;
+    color: #666;
+}
+.friendly-link .open-box {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: block;
+    width: 16px;
+    height: 9px;
+    font-size: 0;
+    line-height: 0;
+    background-position: -70px -100px;
+    cursor: pointer;
+}
+.friendly-link .close-box {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    display: none;
+    width: 16px;
+    height: 9px;
+    font-size: 0;
+    line-height: 0;
+    background-position: -90px -100px;
+    cursor: pointer;
+}
+.friendly-link a {
+    color: #666;
+    line-height: 28px;
+    margin-right: 20px;
+    display: inline-block;
+}
