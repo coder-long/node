@@ -95,6 +95,13 @@ xin.prototype.delete = function() {
         btnPrimary.onclick = () => {
 
             console.log(this.data);
+
+            $.post('/api/delbb', { _id: this.data._id }, function(data) {
+
+                console.log(data);
+
+            })
+
             boxs.classList.add('hidd');
             mask.classList.add('hidd')
 
@@ -119,7 +126,7 @@ jiangjia.onclick = function() {
         url: '/api/jiangjia',
         // data: data,
         success(data) {
-            if (data.length == 0) { //判断收藏表有无数据
+            if (data.data.length == 0) { //判断收藏表有无数据
                 midd.style.height = '680px';
                 car_2.style.height = '620px';
                 car_2.innerHTML = '<div class="zan">暂无收藏车辆</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
@@ -168,10 +175,10 @@ $.ajax({
     url: '/api/jiangjia',
     // data: data,
     success(data) {
-        if (data.length == 0) { //判断收藏表有无数据
+        if (data.data.length == 0) { //判断收藏表有无数据
             midd.style.height = '680px';
             car_2.style.height = '620px';
-            car_2.innerHTML = '<div class="zan">暂无收藏车辆</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
+            car_2.innerHTML = '<div class="zan">暂无降价提醒</div><a href="" class="guang">去逛逛瓜子海量车源 ></a>'
         } else {
             // console.log(data.data.length);
             midd.style.height = data.data.length * 220 + 'px';
