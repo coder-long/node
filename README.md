@@ -1,4 +1,4 @@
-# re-lev3
+# node
 
 ## 项目
 - nodemon app.js
@@ -16,3 +16,6 @@
 - 局域网
     - 192.168.5.18
     - 'mongodb://192.168.5.18:27017/aqy'
+
+## GitHub地址
+- https://github.com/coder-long/node.git
