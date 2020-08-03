@@ -1,5 +1,5 @@
 const mongose = require("mongoose")
-const url = 'mongodb://127.0.0.1:27017/aqy'
+const url = 'mongodb://192.168.5.18:27017/aqy'
 
 //连接数据库
 mongose
