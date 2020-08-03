@@ -8,9 +8,10 @@ window.onload = function () {
         $(".qrcode-box").classList.add("hidden")
     }
 
-    var data = cookie.getCookie(data)
-    $('.info .titleBox').html(data)
-    console.log($('.info .titleBox'));
+    // var data = cookie.getCookie(data)
+    // $('.info .titleBox').html(data)
+    // console.log($('.info .titleBox'));
+    // console.log(cookie.getCookie());
 
 
     // class car{
@@ -27,7 +28,8 @@ window.onload = function () {
 
     // }
 
-
+var imgBox = document.querySelector('.bigimgbox');
+var smallImg = document.querySelector('.smallImg');
 
     var imgarr0 = [
         'https://image1.guazistatic.com/qn20072808052413e6a325ef35a8eafa6919eed1c4d9a1.jpg?imageView2/1/w/600/h/400/q/88',
@@ -46,12 +48,9 @@ window.onload = function () {
     // ];
 
 
-
-
-
-    var imgBox = document.querySelector('.bigimgbox');
-    var smallImg = document.querySelector('.smallImg');
-
+    
+    
+    
     class carImg {
         constructor(urls) {
             this.urls = urls;
@@ -66,12 +65,41 @@ window.onload = function () {
         }
     }
     for (var item of imgarr0) {
-
+        
         new carImg(item);
-
+        
     }
 
 
+
+
+
+
+    var carMsg = JSON.parse(cookie.getCookie('carMsg'));
+    console.log(carMsg.datas );
+    
+    // //获取cookie数据
+    
+    // var two = document.querySelector('.two');
+    // var three = document.querySelector('.three');
+    // var priceBox = document.querySelector('.priceBox');
+    
+    // var titleBox = document.querySelector('.titleBox');
+    // var bigimgbox = document.querySelector('.bigimgbox');
+    // console.log(imgBox);
+    // imgBox.style.backgroundImage = '\"'+carMsg.datas.img_src+'\"';
+    console.log(carMsg.datas.img_src)
+    
+    $('.info .titleBox').html(carMsg.datas.char_type)
+    $('.one span').html(carMsg.datas.year)
+    $('.two span').html(carMsg.datas.mileage)
+    $('.three span').html(carMsg.datas.mileage)
+    $('.four span').html(carMsg.datas.mileage)
+    $('.price-num').html(carMsg.datas.now_price)
+    $('.price-origin').html(carMsg.datas.pre_price)
+    $('.bigimgbox').css({
+        'backgroundImage': `url('${carMsg.datas.img_src}')`
+    })
 
 
 
@@ -80,7 +108,6 @@ window.onload = function () {
 
 
 }
-
 
 
 
