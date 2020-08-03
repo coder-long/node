@@ -152,9 +152,9 @@ var num = 0;
     $('.selection input').on('keydown', function (e) {
 
         if (e.keyCode == 13) {
-            $('.l_box').css({
-                'display': 'none'
-            })
+            // $('.l_box').css({
+            //     'display': 'none'
+            // })
             $('.l_box1').css({
                 'display': 'block'
             })
