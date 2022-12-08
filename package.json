@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/coder-long/LEV3#readme",
   "devDependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
